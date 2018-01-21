@@ -37,43 +37,68 @@
     font-family: 'Macondo', cursive;
 }
 
+body {
+    background-color: #405066;
+}
+
 #logo {
-    background-color: #03141b;
+    background-color: #8DA7BE;
     height: 100px;
     margin-bottom: 1px;
 }
 
-#leftBox {
-    height: 150px;
-    background-color: green;
-    border-right: 1px solid white;
+#rightBox {
+    height: 400px;
+    background-color: #CDE6F5;
 }
 
-#rightBox {
-    height: 150px;
-    background-color: green;
-    border-left: 1px solid white;
-
+.menu {
+    height: 94px;
+    background-color: #707078;
+    margin: 5px;
+    border: 1px solid white;
+    a {
+        color:inherit;
+        text-decoration: none;
+    }
+    p {
+        text-align: center;
+        padding-top: 8px;
+        font-weight: 800;
+        font-size: 26px;
+        color: white;
+        &:hover {
+            color: #aeaeae;
+            text-shadow: 2px 2px #d0d0d0;
+        }
+    }
 }
 
 #mainSection {
-    height: 150px;
-    background-color: green;
+    height: 400px;
+    background-color: #554640;
+    p {
+        color: white;
+        padding: 15px;
+    }
 }
 
 #footer {
     height: 100px;
-    background-color: yellow;
+    background-color: #87919E;
+    margin-top: 1px;
 }
 
-#lion {
+#grumpy {
     width: 100px;
     height: 100px;
     float: right;
+    margin-right: 20px;
 }
 
 h1 {
     color: white;
     float: left;
     margin-left: 100px;
+    text-shadow: 2px 2px gray;
 }
