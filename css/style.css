@@ -83,6 +83,17 @@ body {
   height: 100px;
   background-color: #87919E;
   margin-top: 1px; }
+  #footer img {
+    width: 106px;
+    height: 106px;
+    float: left;
+    margin-right: 20px; }
+  #footer p {
+    float: right;
+    color: white;
+    padding-top: 42px;
+    padding-right: 6px;
+    font-size: 24px; }
 
 #grumpy {
   width: 100px;
@@ -95,5 +106,10 @@ h1 {
   float: left;
   margin-left: 100px;
   text-shadow: 2px 2px gray; }
+
+.clock {
+  float: right;
+  padding-right: 5px;
+  padding-top: 250px; }
 
 /*# sourceMappingURL=style.css.map */

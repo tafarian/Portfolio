@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 <header className="grid">
                     <div className="row">
                         <div className="col-12" id="logo">
-                            <h1>Jakub Wyczesany Portfolio</h1>
+                            <h1>Portfolio</h1>
                             <img id="grumpy" src="./../images/grumpy.png"/>
                         </div>
                     </div>
@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function(){
                             <p>
                                 WITAJ NA MOIM PORTFOLIO, TUTAJ ZNAJDUJĄ SIĘ WSZYSTKIE INFORMACJE O MNIE ORAZ O PRACACH KTÓRE DOTYCHCZAS WYKONAŁEM :)
                             </p>
+                            <Clock/>
                         </div>
                         <Menu />
                     </div>
@@ -113,10 +114,47 @@ document.addEventListener('DOMContentLoaded', function(){
             return (
                 <footer className="grid space">
                     <div className="row">
-                        <div className="col-12" id="footer"></div>
+                        <div className="col-12" id="footer">
+                            <img src="./../images/grumpy2.png"/>
+                            <p>&#169; Jakub Wyczesany 2017</p>
+                        </div>
                     </div>
                 </footer>
             )
+        }
+    }
+
+    class Clock extends React.Component {
+        constructor(props) {
+            super(props);
+
+            this.state = {
+                date: new Date(),
+            }
+        }
+
+        componentDidMount() {
+            this.interval = setInterval( () => {
+                this.setState({
+                    date: new Date(),
+                })
+            }, 1000)
+        }
+
+        componentWillUnmount() {
+            clearInterval(this.interval);
+        }
+
+        render() {
+            return <div>
+                <ClockTime time={this.state.date} />
+            </div>
+        }
+    }
+
+    class ClockTime extends React.Component {
+        render() {
+            return <h1 className="clock">{ this.props.time.toLocaleTimeString() }</h1>
         }
     }
 
@@ -131,8 +169,6 @@ document.addEventListener('DOMContentLoaded', function(){
             )
         }
     }
-
-
 
     class App extends React.Component {
         render() {
