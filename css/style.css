@@ -1,0 +1,78 @@
+.grid {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; }
+  .grid .row:before, .grid .row:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .grid .row [class*='col-'] {
+    float: left;
+    min-height: 1px; }
+  .grid .row .col-1 {
+    width: 8.3333333333%; }
+  .grid .row .col-2 {
+    width: 16.6666666667%; }
+  .grid .row .col-3 {
+    width: 25%; }
+  .grid .row .col-4 {
+    width: 33.3333333333%; }
+  .grid .row .col-5 {
+    width: 41.6666666667%; }
+  .grid .row .col-6 {
+    width: 50%; }
+  .grid .row .col-7 {
+    width: 58.3333333333%; }
+  .grid .row .col-8 {
+    width: 66.6666666667%; }
+  .grid .row .col-9 {
+    width: 75%; }
+  .grid .row .col-10 {
+    width: 83.3333333333%; }
+  .grid .row .col-11 {
+    width: 91.6666666667%; }
+  .grid .row .col-12 {
+    width: 100%; }
+  @media (max-width: 640px) {
+    .grid .row [class*='col-'] {
+      float: none;
+      width: 100%; } }
+
+* {
+  box-sizing: border-box;
+  font-family: 'Macondo', cursive; }
+
+#logo {
+  background-color: #03141b;
+  height: 100px;
+  margin-bottom: 1px; }
+
+#leftBox {
+  height: 150px;
+  background-color: green;
+  border-right: 1px solid white; }
+
+#rightBox {
+  height: 150px;
+  background-color: green;
+  border-left: 1px solid white; }
+
+#mainSection {
+  height: 150px;
+  background-color: green; }
+
+#footer {
+  height: 100px;
+  background-color: yellow; }
+
+#lion {
+  width: 100px;
+  height: 100px;
+  float: right; }
+
+h1 {
+  color: white;
+  float: left;
+  margin-left: 100px; }
+
+/*# sourceMappingURL=style.css.map */
