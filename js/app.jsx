@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function(){
                     <div className="row">
                         <div className="col-12" id="logo">
                             <h1>Portfolio</h1>
-                            <img id="grumpy" src="./../images/grumpy.png"/>
+                            <img id="grumpy" src="./../images/grumpy2.png"/>
                         </div>
                     </div>
                 </header>
@@ -33,10 +33,13 @@ document.addEventListener('DOMContentLoaded', function(){
                 <section className="grid space">
                     <div className="row">
                         <div className="col-9" id="mainSection">
-                            <p>
-                                WITAJ NA MOIM PORTFOLIO, TUTAJ ZNAJDUJĄ SIĘ WSZYSTKIE INFORMACJE O MNIE ORAZ O PRACACH KTÓRE DOTYCHCZAS WYKONAŁEM :)
+                            <p className="mainText">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan lectus ex, a pellentesque arcu consequat in. Proin finibus luctus ipsum, a volutpat arcu auctor ut. In iaculis, nisl sit amet dictum mattis, augue lacus ornare massa, id tempor orci neque ac ligula. Cras cursus fermentum commodo. Vivamus volutpat nulla vel enim porta, vel congue augue scelerisque. In ultricies quam diam, in viverra diam posuere quis. Curabitur vel ornare ante, sed maximus eros. In interdum lacus et lectus imperdiet, eget auctor risus mollis. Donec nunc dui, vehicula in sapien vitae, viverra dignissim urna.
+
+                                Nunc eget odio eget dui tempus hendrerit nec at sem. Ut vulputate felis et auctor volutpat. Donec vel lectus congue, rhoncus sapien in, maximus risus. Nullam ac enim dictum, mattis mauris sed, egestas nunc. Pellentesque auctor id urna faucibus fermentum. Nullam ac elementum sem. Suspendisse potenti. Morbi quam magna, molestie eget velit nec, fermentum ultrices mi.
+
+                                Donec tortor massa, dictum nec tortor et, sollicitudin eleifend leo. Pellentesque sit amet ligula euismod mi facilisis congue. Sed consectetur dictum tortor, a interdum magna condimentum vel. Donec ut ex sit amet orci maximus ultrices. Aliquam id interdum nibh. Ut rutrum posuere congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed nibh quis quam tincidunt condimentum. Donec at augue pulvinar, commodo ligula eu, finibus augue. Mauris convallis varius nulla, eu egestas est vestibulum sit amet. Praesent pharetra efficitur libero at semper. Aenean faucibus quam lorem, quis accumsan augue faucibus efficitur.
                             </p>
-                            <Clock/>
                         </div>
                         <Menu />
                     </div>
@@ -46,14 +49,57 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
     class Projects extends React.Component {
+        state = {
+            slideCount: 1
+        };
+
+        handleClickPrev = () => {
+            this.setState({
+                slideCount: this.state.slideCount - 1
+            })
+        };
+
+        handleClickNext = () => {
+            this.setState({
+                slideCount: this.state.slideCount + 1
+            })
+        };
+
         render() {
+            if (this.state.slideCount > 3) {
+                this.setState({
+                    slideCount: 1
+                })
+            } else if (this.state.slideCount < 0 ) {
+                this.setState({
+                    slideCount: 3
+                })
+            }
             return (
                 <section className="grid space">
                     <div className="row">
                         <div className="col-9" id="mainSection">
-                            <p>
-                                W PRZYSZŁOŚCI TUTAJ ZNAJDĄ SIĘ MOJE WSZYSTKIE PROJEKTY
-                            </p>
+                            <div className="arrows prev"
+                                 onClick={this.handleClickPrev}></div>
+                            <div className="boxRow slider">
+                                { this.state.slideCount === 1 ?
+                                    <div className="slide">
+                                        <img src="./../images/1.jpeg"/>
+                                    </div> :
+                                    null }
+                                { this.state.slideCount === 2 ?
+                                    <div className="slide">
+                                        <img src="./../images/2.jpeg"/>
+                                    </div> :
+                                    null }
+                                { this.state.slideCount === 3 ?
+                                    <div className="slide">
+                                        <img src="./../images/3.jpeg"/>
+                                    </div> :
+                                    null }
+                            </div>
+                            <div className="arrows next"
+                                 onClick={this.handleClickNext}></div>
                         </div>
                         <Menu />
                     </div>
@@ -68,8 +114,12 @@ document.addEventListener('DOMContentLoaded', function(){
                 <section className="grid space">
                     <div className="row">
                         <div className="col-9" id="mainSection">
-                            <p>
-                                W TYM SEGMENCIE DOWIESZ SIĘ WIECEJ O MNIE. KIM JESTEM I CZYM SIĘ ZAJMUJĘ
+                            <p className="mainText">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan lectus ex, a pellentesque arcu consequat in. Proin finibus luctus ipsum, a volutpat arcu auctor ut. In iaculis, nisl sit amet dictum mattis, augue lacus ornare massa, id tempor orci neque ac ligula. Cras cursus fermentum commodo. Vivamus volutpat nulla vel enim porta, vel congue augue scelerisque. In ultricies quam diam, in viverra diam posuere quis. Curabitur vel ornare ante, sed maximus eros. In interdum lacus et lectus imperdiet, eget auctor risus mollis. Donec nunc dui, vehicula in sapien vitae, viverra dignissim urna.
+
+                                Nunc eget odio eget dui tempus hendrerit nec at sem. Ut vulputate felis et auctor volutpat. Donec vel lectus congue, rhoncus sapien in, maximus risus. Nullam ac enim dictum, mattis mauris sed, egestas nunc. Pellentesque auctor id urna faucibus fermentum. Nullam ac elementum sem. Suspendisse potenti. Morbi quam magna, molestie eget velit nec, fermentum ultrices mi.
+
+                                Donec tortor massa, dictum nec tortor et, sollicitudin eleifend leo. Pellentesque sit amet ligula euismod mi facilisis congue. Sed consectetur dictum tortor, a interdum magna condimentum vel. Donec ut ex sit amet orci maximus ultrices. Aliquam id interdum nibh. Ut rutrum posuere congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed nibh quis quam tincidunt condimentum. Donec at augue pulvinar, commodo ligula eu, finibus augue. Mauris convallis varius nulla, eu egestas est vestibulum sit amet. Praesent pharetra efficitur libero at semper. Aenean faucibus quam lorem, quis accumsan augue faucibus efficitur.
                             </p>
                         </div>
                         <Menu />
@@ -85,8 +135,12 @@ document.addEventListener('DOMContentLoaded', function(){
                 <section className="grid space">
                     <div className="row">
                         <div className="col-9" id="mainSection">
-                            <p>
-                                W TYM MIEJSCU DOSTĘPNE BĘDĄ INFORMACJE NA TEMAT W JAKI SPOSÓB SIĘ ZE MNĄ SKONTAKTOWAĆ
+                            <p className="mainText">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan lectus ex, a pellentesque arcu consequat in. Proin finibus luctus ipsum, a volutpat arcu auctor ut. In iaculis, nisl sit amet dictum mattis, augue lacus ornare massa, id tempor orci neque ac ligula. Cras cursus fermentum commodo. Vivamus volutpat nulla vel enim porta, vel congue augue scelerisque. In ultricies quam diam, in viverra diam posuere quis. Curabitur vel ornare ante, sed maximus eros. In interdum lacus et lectus imperdiet, eget auctor risus mollis. Donec nunc dui, vehicula in sapien vitae, viverra dignissim urna.
+
+                                Nunc eget odio eget dui tempus hendrerit nec at sem. Ut vulputate felis et auctor volutpat. Donec vel lectus congue, rhoncus sapien in, maximus risus. Nullam ac enim dictum, mattis mauris sed, egestas nunc. Pellentesque auctor id urna faucibus fermentum. Nullam ac elementum sem. Suspendisse potenti. Morbi quam magna, molestie eget velit nec, fermentum ultrices mi.
+
+                                Donec tortor massa, dictum nec tortor et, sollicitudin eleifend leo. Pellentesque sit amet ligula euismod mi facilisis congue. Sed consectetur dictum tortor, a interdum magna condimentum vel. Donec ut ex sit amet orci maximus ultrices. Aliquam id interdum nibh. Ut rutrum posuere congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed nibh quis quam tincidunt condimentum. Donec at augue pulvinar, commodo ligula eu, finibus augue. Mauris convallis varius nulla, eu egestas est vestibulum sit amet. Praesent pharetra efficitur libero at semper. Aenean faucibus quam lorem, quis accumsan augue faucibus efficitur.
                             </p>
                         </div>
                         <Menu />
@@ -115,8 +169,8 @@ document.addEventListener('DOMContentLoaded', function(){
                 <footer className="grid space">
                     <div className="row">
                         <div className="col-12" id="footer">
-                            <img src="./../images/grumpy2.png"/>
-                            <p>&#169; Jakub Wyczesany 2017</p>
+                            <img src="./../images/grumpy.png"/>
+                            <p>Jakub Wyczesany 2018</p>
                         </div>
                     </div>
                 </footer>

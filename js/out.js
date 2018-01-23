@@ -13621,9 +13621,9 @@ document.addEventListener('DOMContentLoaded', function () {
                             _react2.default.createElement(
                                 'h1',
                                 null,
-                                'Jakub Wyczesany Portfolio'
+                                'Portfolio'
                             ),
-                            _react2.default.createElement('img', { id: 'grumpy', src: './../images/grumpy.png' })
+                            _react2.default.createElement('img', { id: 'grumpy', src: './../images/grumpy2.png' })
                         )
                     )
                 );
@@ -13656,8 +13656,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             { className: 'col-9', id: 'mainSection' },
                             _react2.default.createElement(
                                 'p',
-                                null,
-                                'WITAJ NA MOIM PORTFOLIO, TUTAJ ZNAJDUJ\u0104 SI\u0118 WSZYSTKIE INFORMACJE O MNIE ORAZ O PRACACH KT\xD3RE DOTYCHCZAS WYKONA\u0141EM :)'
+                                { className: 'mainText' },
+                                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan lectus ex, a pellentesque arcu consequat in. Proin finibus luctus ipsum, a volutpat arcu auctor ut. In iaculis, nisl sit amet dictum mattis, augue lacus ornare massa, id tempor orci neque ac ligula. Cras cursus fermentum commodo. Vivamus volutpat nulla vel enim porta, vel congue augue scelerisque. In ultricies quam diam, in viverra diam posuere quis. Curabitur vel ornare ante, sed maximus eros. In interdum lacus et lectus imperdiet, eget auctor risus mollis. Donec nunc dui, vehicula in sapien vitae, viverra dignissim urna. Nunc eget odio eget dui tempus hendrerit nec at sem. Ut vulputate felis et auctor volutpat. Donec vel lectus congue, rhoncus sapien in, maximus risus. Nullam ac enim dictum, mattis mauris sed, egestas nunc. Pellentesque auctor id urna faucibus fermentum. Nullam ac elementum sem. Suspendisse potenti. Morbi quam magna, molestie eget velit nec, fermentum ultrices mi. Donec tortor massa, dictum nec tortor et, sollicitudin eleifend leo. Pellentesque sit amet ligula euismod mi facilisis congue. Sed consectetur dictum tortor, a interdum magna condimentum vel. Donec ut ex sit amet orci maximus ultrices. Aliquam id interdum nibh. Ut rutrum posuere congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed nibh quis quam tincidunt condimentum. Donec at augue pulvinar, commodo ligula eu, finibus augue. Mauris convallis varius nulla, eu egestas est vestibulum sit amet. Praesent pharetra efficitur libero at semper. Aenean faucibus quam lorem, quis accumsan augue faucibus efficitur.'
                             )
                         ),
                         _react2.default.createElement(Menu, null)
@@ -13673,14 +13673,41 @@ document.addEventListener('DOMContentLoaded', function () {
         _inherits(Projects, _React$Component3);
 
         function Projects() {
+            var _ref;
+
+            var _temp, _this3, _ret;
+
             _classCallCheck(this, Projects);
 
-            return _possibleConstructorReturn(this, (Projects.__proto__ || Object.getPrototypeOf(Projects)).apply(this, arguments));
+            for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+                args[_key] = arguments[_key];
+            }
+
+            return _ret = (_temp = (_this3 = _possibleConstructorReturn(this, (_ref = Projects.__proto__ || Object.getPrototypeOf(Projects)).call.apply(_ref, [this].concat(args))), _this3), _this3.state = {
+                slideCount: 1
+            }, _this3.handleClickPrev = function () {
+                _this3.setState({
+                    slideCount: _this3.state.slideCount - 1
+                });
+            }, _this3.handleClickNext = function () {
+                _this3.setState({
+                    slideCount: _this3.state.slideCount + 1
+                });
+            }, _temp), _possibleConstructorReturn(_this3, _ret);
         }
 
         _createClass(Projects, [{
             key: 'render',
             value: function render() {
+                if (this.state.slideCount > 3) {
+                    this.setState({
+                        slideCount: 1
+                    });
+                } else if (this.state.slideCount < 0) {
+                    this.setState({
+                        slideCount: 3
+                    });
+                }
                 return _react2.default.createElement(
                     'section',
                     { className: 'grid space' },
@@ -13690,11 +13717,29 @@ document.addEventListener('DOMContentLoaded', function () {
                         _react2.default.createElement(
                             'div',
                             { className: 'col-9', id: 'mainSection' },
+                            _react2.default.createElement('div', { className: 'arrows prev',
+                                onClick: this.handleClickPrev }),
                             _react2.default.createElement(
-                                'p',
-                                null,
-                                'W PRZYSZ\u0141O\u015ACI TUTAJ ZNAJD\u0104 SI\u0118 MOJE WSZYSTKIE PROJEKTY'
-                            )
+                                'div',
+                                { className: 'boxRow slider' },
+                                this.state.slideCount === 1 ? _react2.default.createElement(
+                                    'div',
+                                    { className: 'slide' },
+                                    _react2.default.createElement('img', { src: './../images/1.jpeg' })
+                                ) : null,
+                                this.state.slideCount === 2 ? _react2.default.createElement(
+                                    'div',
+                                    { className: 'slide' },
+                                    _react2.default.createElement('img', { src: './../images/2.jpeg' })
+                                ) : null,
+                                this.state.slideCount === 3 ? _react2.default.createElement(
+                                    'div',
+                                    { className: 'slide' },
+                                    _react2.default.createElement('img', { src: './../images/3.jpeg' })
+                                ) : null
+                            ),
+                            _react2.default.createElement('div', { className: 'arrows next',
+                                onClick: this.handleClickNext })
                         ),
                         _react2.default.createElement(Menu, null)
                     )
@@ -13728,8 +13773,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             { className: 'col-9', id: 'mainSection' },
                             _react2.default.createElement(
                                 'p',
-                                null,
-                                'W TYM SEGMENCIE DOWIESZ SI\u0118 WIECEJ O MNIE. KIM JESTEM I CZYM SI\u0118 ZAJMUJ\u0118'
+                                { className: 'mainText' },
+                                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan lectus ex, a pellentesque arcu consequat in. Proin finibus luctus ipsum, a volutpat arcu auctor ut. In iaculis, nisl sit amet dictum mattis, augue lacus ornare massa, id tempor orci neque ac ligula. Cras cursus fermentum commodo. Vivamus volutpat nulla vel enim porta, vel congue augue scelerisque. In ultricies quam diam, in viverra diam posuere quis. Curabitur vel ornare ante, sed maximus eros. In interdum lacus et lectus imperdiet, eget auctor risus mollis. Donec nunc dui, vehicula in sapien vitae, viverra dignissim urna. Nunc eget odio eget dui tempus hendrerit nec at sem. Ut vulputate felis et auctor volutpat. Donec vel lectus congue, rhoncus sapien in, maximus risus. Nullam ac enim dictum, mattis mauris sed, egestas nunc. Pellentesque auctor id urna faucibus fermentum. Nullam ac elementum sem. Suspendisse potenti. Morbi quam magna, molestie eget velit nec, fermentum ultrices mi. Donec tortor massa, dictum nec tortor et, sollicitudin eleifend leo. Pellentesque sit amet ligula euismod mi facilisis congue. Sed consectetur dictum tortor, a interdum magna condimentum vel. Donec ut ex sit amet orci maximus ultrices. Aliquam id interdum nibh. Ut rutrum posuere congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed nibh quis quam tincidunt condimentum. Donec at augue pulvinar, commodo ligula eu, finibus augue. Mauris convallis varius nulla, eu egestas est vestibulum sit amet. Praesent pharetra efficitur libero at semper. Aenean faucibus quam lorem, quis accumsan augue faucibus efficitur.'
                             )
                         ),
                         _react2.default.createElement(Menu, null)
@@ -13764,8 +13809,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             { className: 'col-9', id: 'mainSection' },
                             _react2.default.createElement(
                                 'p',
-                                null,
-                                'W TYM MIEJSCU DOST\u0118PNE B\u0118D\u0104 INFORMACJE NA TEMAT W JAKI SPOS\xD3B SI\u0118 ZE MN\u0104 SKONTAKTOWA\u0106'
+                                { className: 'mainText' },
+                                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan lectus ex, a pellentesque arcu consequat in. Proin finibus luctus ipsum, a volutpat arcu auctor ut. In iaculis, nisl sit amet dictum mattis, augue lacus ornare massa, id tempor orci neque ac ligula. Cras cursus fermentum commodo. Vivamus volutpat nulla vel enim porta, vel congue augue scelerisque. In ultricies quam diam, in viverra diam posuere quis. Curabitur vel ornare ante, sed maximus eros. In interdum lacus et lectus imperdiet, eget auctor risus mollis. Donec nunc dui, vehicula in sapien vitae, viverra dignissim urna. Nunc eget odio eget dui tempus hendrerit nec at sem. Ut vulputate felis et auctor volutpat. Donec vel lectus congue, rhoncus sapien in, maximus risus. Nullam ac enim dictum, mattis mauris sed, egestas nunc. Pellentesque auctor id urna faucibus fermentum. Nullam ac elementum sem. Suspendisse potenti. Morbi quam magna, molestie eget velit nec, fermentum ultrices mi. Donec tortor massa, dictum nec tortor et, sollicitudin eleifend leo. Pellentesque sit amet ligula euismod mi facilisis congue. Sed consectetur dictum tortor, a interdum magna condimentum vel. Donec ut ex sit amet orci maximus ultrices. Aliquam id interdum nibh. Ut rutrum posuere congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed nibh quis quam tincidunt condimentum. Donec at augue pulvinar, commodo ligula eu, finibus augue. Mauris convallis varius nulla, eu egestas est vestibulum sit amet. Praesent pharetra efficitur libero at semper. Aenean faucibus quam lorem, quis accumsan augue faucibus efficitur.'
                             )
                         ),
                         _react2.default.createElement(Menu, null)
@@ -13869,7 +13914,16 @@ document.addEventListener('DOMContentLoaded', function () {
                     _react2.default.createElement(
                         'div',
                         { className: 'row' },
-                        _react2.default.createElement('div', { className: 'col-12', id: 'footer' })
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'col-12', id: 'footer' },
+                            _react2.default.createElement('img', { src: './../images/grumpy.png' }),
+                            _react2.default.createElement(
+                                'p',
+                                null,
+                                'Jakub Wyczesany 2018'
+                            )
+                        )
                     )
                 );
             }
@@ -13878,8 +13932,75 @@ document.addEventListener('DOMContentLoaded', function () {
         return Footer;
     }(_react2.default.Component);
 
-    var Template = function (_React$Component8) {
-        _inherits(Template, _React$Component8);
+    var Clock = function (_React$Component8) {
+        _inherits(Clock, _React$Component8);
+
+        function Clock(props) {
+            _classCallCheck(this, Clock);
+
+            var _this8 = _possibleConstructorReturn(this, (Clock.__proto__ || Object.getPrototypeOf(Clock)).call(this, props));
+
+            _this8.state = {
+                date: new Date()
+            };
+            return _this8;
+        }
+
+        _createClass(Clock, [{
+            key: 'componentDidMount',
+            value: function componentDidMount() {
+                var _this9 = this;
+
+                this.interval = setInterval(function () {
+                    _this9.setState({
+                        date: new Date()
+                    });
+                }, 1000);
+            }
+        }, {
+            key: 'componentWillUnmount',
+            value: function componentWillUnmount() {
+                clearInterval(this.interval);
+            }
+        }, {
+            key: 'render',
+            value: function render() {
+                return _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(ClockTime, { time: this.state.date })
+                );
+            }
+        }]);
+
+        return Clock;
+    }(_react2.default.Component);
+
+    var ClockTime = function (_React$Component9) {
+        _inherits(ClockTime, _React$Component9);
+
+        function ClockTime() {
+            _classCallCheck(this, ClockTime);
+
+            return _possibleConstructorReturn(this, (ClockTime.__proto__ || Object.getPrototypeOf(ClockTime)).apply(this, arguments));
+        }
+
+        _createClass(ClockTime, [{
+            key: 'render',
+            value: function render() {
+                return _react2.default.createElement(
+                    'h1',
+                    { className: 'clock' },
+                    this.props.time.toLocaleTimeString()
+                );
+            }
+        }]);
+
+        return ClockTime;
+    }(_react2.default.Component);
+
+    var Template = function (_React$Component10) {
+        _inherits(Template, _React$Component10);
 
         function Template() {
             _classCallCheck(this, Template);
@@ -13903,8 +14024,8 @@ document.addEventListener('DOMContentLoaded', function () {
         return Template;
     }(_react2.default.Component);
 
-    var App = function (_React$Component9) {
-        _inherits(App, _React$Component9);
+    var App = function (_React$Component11) {
+        _inherits(App, _React$Component11);
 
         function App() {
             _classCallCheck(this, App);
@@ -25011,7 +25132,7 @@ exports = module.exports = __webpack_require__(217)(false);
 
 
 // module
-exports.push([module.i, ".grid {\n  width: 100%;\n  max-width: 1200px;\n  margin: 0 auto; }\n  .grid .row:before, .grid .row:after {\n    content: \"\";\n    display: table;\n    clear: both; }\n  .grid .row [class*='col-'] {\n    float: left;\n    min-height: 1px; }\n  .grid .row .col-1 {\n    width: 8.33333%; }\n  .grid .row .col-2 {\n    width: 16.66667%; }\n  .grid .row .col-3 {\n    width: 25%; }\n  .grid .row .col-4 {\n    width: 33.33333%; }\n  .grid .row .col-5 {\n    width: 41.66667%; }\n  .grid .row .col-6 {\n    width: 50%; }\n  .grid .row .col-7 {\n    width: 58.33333%; }\n  .grid .row .col-8 {\n    width: 66.66667%; }\n  .grid .row .col-9 {\n    width: 75%; }\n  .grid .row .col-10 {\n    width: 83.33333%; }\n  .grid .row .col-11 {\n    width: 91.66667%; }\n  .grid .row .col-12 {\n    width: 100%; }\n  @media (max-width: 640px) {\n    .grid .row [class*='col-'] {\n      float: none;\n      width: 100%; } }\n\n* {\n  box-sizing: border-box;\n  font-family: 'Macondo', cursive; }\n\nbody {\n  background-color: #405066; }\n\n#logo {\n  background-color: #8DA7BE;\n  height: 100px;\n  margin-bottom: 1px; }\n\n#rightBox {\n  height: 400px;\n  background-color: #CDE6F5; }\n\n.menu {\n  height: 94px;\n  background-color: #707078;\n  margin: 5px;\n  border: 1px solid white; }\n  .menu a {\n    color: inherit;\n    text-decoration: none; }\n  .menu p {\n    text-align: center;\n    padding-top: 8px;\n    font-weight: 800;\n    font-size: 26px;\n    color: white; }\n    .menu p:hover {\n      color: #aeaeae;\n      text-shadow: 2px 2px #d0d0d0; }\n\n#mainSection {\n  height: 400px;\n  background-color: #554640; }\n  #mainSection p {\n    color: white;\n    padding: 15px; }\n\n#footer {\n  height: 100px;\n  background-color: #87919E;\n  margin-top: 1px; }\n\n#grumpy {\n  width: 100px;\n  height: 100px;\n  float: right;\n  margin-right: 20px; }\n\nh1 {\n  color: white;\n  float: left;\n  margin-left: 100px;\n  text-shadow: 2px 2px gray; }\n", ""]);
+exports.push([module.i, ".grid {\n  width: 100%;\n  max-width: 1200px;\n  margin: 0 auto; }\n  .grid .row:before, .grid .row:after {\n    content: \"\";\n    display: table;\n    clear: both; }\n  .grid .row [class*='col-'] {\n    float: left;\n    min-height: 1px; }\n  .grid .row .col-1 {\n    width: 8.33333%; }\n  .grid .row .col-2 {\n    width: 16.66667%; }\n  .grid .row .col-3 {\n    width: 25%; }\n  .grid .row .col-4 {\n    width: 33.33333%; }\n  .grid .row .col-5 {\n    width: 41.66667%; }\n  .grid .row .col-6 {\n    width: 50%; }\n  .grid .row .col-7 {\n    width: 58.33333%; }\n  .grid .row .col-8 {\n    width: 66.66667%; }\n  .grid .row .col-9 {\n    width: 75%; }\n  .grid .row .col-10 {\n    width: 83.33333%; }\n  .grid .row .col-11 {\n    width: 91.66667%; }\n  .grid .row .col-12 {\n    width: 100%; }\n  @media (max-width: 640px) {\n    .grid .row [class*='col-'] {\n      float: none;\n      width: 100%; } }\n\n* {\n  box-sizing: border-box;\n  font-family: 'Macondo', cursive; }\n\nbody {\n  background-color: #405066; }\n\n#logo {\n  background-color: #8DA7BE;\n  height: 100px;\n  margin-bottom: 1px; }\n\n#rightBox {\n  height: 400px;\n  background-color: #CDE6F5; }\n\n.mainText {\n  color: white;\n  padding: 20px; }\n\n.menu {\n  height: 94px;\n  background-color: #707078;\n  margin: 5px;\n  border: 1px solid white; }\n  .menu a {\n    color: inherit;\n    text-decoration: none; }\n  .menu p {\n    text-align: center;\n    padding-top: 8px;\n    font-weight: 800;\n    font-size: 26px;\n    color: white; }\n    .menu p:hover {\n      font-size: 30px;\n      padding-top: 0; }\n  .menu:hover {\n    -webkit-box-shadow: inset 15px 15px 24px -8px #252c52;\n    -moz-box-shadow: inset 15px 15px 24px -8px #252c52;\n    box-shadow: inset 15px 15px 24px -8px #252c52; }\n\n#mainSection {\n  height: 400px;\n  background-color: #554640;\n  display: flex;\n  align-items: center;\n  justify-content: space-around; }\n  #mainSection .boxRow {\n    display: flex;\n    margin-right: 15px; }\n  #mainSection .arrows {\n    width: 48px;\n    height: 48px;\n    border-color: #000;\n    top: 50%; }\n  #mainSection .prev {\n    border-bottom: 6px solid;\n    border-left: 6px solid;\n    transform: rotate(45deg);\n    left: 10px; }\n  #mainSection .next {\n    border-bottom: 6px solid;\n    border-left: 6px solid;\n    transform: rotate(-135deg);\n    right: 10px; }\n\n#footer {\n  height: 100px;\n  background-color: #87919E;\n  margin-top: 1px; }\n  #footer img {\n    width: 106px;\n    height: 106px;\n    float: left;\n    padding-bottom: 6px; }\n  #footer p {\n    float: right;\n    color: white;\n    padding-top: 42px;\n    padding-right: 6px;\n    font-size: 24px; }\n\n#grumpy {\n  width: 100px;\n  height: 100px;\n  float: right;\n  margin-right: 20px;\n  margin-top: 26px; }\n\nh1 {\n  color: white;\n  float: left;\n  margin-left: 100px;\n  text-shadow: 2px 2px gray; }\n\n.clock {\n  float: right;\n  padding-right: 5px;\n  padding-top: 280px; }\n\n.slider {\n  list-style: none;\n  width: 400px;\n  height: 200px; }\n  .slider li {\n    display: none; }\n  .slider .visible {\n    display: inline-block; }\n", ""]);
 
 // exports
 
