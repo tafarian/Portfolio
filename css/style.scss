@@ -159,14 +159,10 @@ h1 {
 }
 
 .slider {
-    list-style: none;
     width: 400px;
     height: 200px;
-    li {
-        display: none;
-    }
-    .visible {
-        display: inline-block;
+    img {
+        border: 1px solid black;
     }
 }
 

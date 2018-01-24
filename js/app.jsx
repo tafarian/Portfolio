@@ -57,24 +57,26 @@ document.addEventListener('DOMContentLoaded', function(){
             this.setState({
                 slideCount: this.state.slideCount - 1
             })
+            if (this.state.slideCount <= 1) {
+                this.setState({
+                    slideCount: 3
+                })
+            }
         };
 
         handleClickNext = () => {
             this.setState({
                 slideCount: this.state.slideCount + 1
             })
-        };
-
-        render() {
-            if (this.state.slideCount > 3) {
+            if (this.state.slideCount > 2) {
                 this.setState({
                     slideCount: 1
                 })
-            } else if (this.state.slideCount < 0 ) {
-                this.setState({
-                    slideCount: 3
-                })
             }
+        };
+
+
+        render() {
             return (
                 <section className="grid space">
                     <div className="row">
@@ -83,17 +85,19 @@ document.addEventListener('DOMContentLoaded', function(){
                                  onClick={this.handleClickPrev}></div>
                             <div className="boxRow slider">
                                 { this.state.slideCount === 1 ?
-                                    <div className="slide">
-                                        <img src="./../images/1.jpeg"/>
+                                    <div>
+                                        <a href="https://tafarian.github.io/Sit-on-chair-project"><img src="./../images/sitonchair.png"/>
+                                        </a>
                                     </div> :
                                     null }
                                 { this.state.slideCount === 2 ?
-                                    <div className="slide">
-                                        <img src="./../images/2.jpeg"/>
+                                    <div>
+                                        <a href="https://tafarian.github.io/Furry-game"><img src="./../images/furrygame.png"/>
+                                        </a>
                                     </div> :
                                     null }
                                 { this.state.slideCount === 3 ?
-                                    <div className="slide">
+                                    <div>
                                         <img src="./../images/3.jpeg"/>
                                     </div> :
                                     null }

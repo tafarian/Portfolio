@@ -140,12 +140,9 @@ h1 {
   padding-top: 280px; }
 
 .slider {
-  list-style: none;
   width: 400px;
   height: 200px; }
-  .slider li {
-    display: none; }
-  .slider .visible {
-    display: inline-block; }
+  .slider img {
+    border: 1px solid black; }
 
 /*# sourceMappingURL=style.css.map */

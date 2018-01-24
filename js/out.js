@@ -13689,25 +13689,26 @@ document.addEventListener('DOMContentLoaded', function () {
                 _this3.setState({
                     slideCount: _this3.state.slideCount - 1
                 });
+                if (_this3.state.slideCount <= 1) {
+                    _this3.setState({
+                        slideCount: 3
+                    });
+                }
             }, _this3.handleClickNext = function () {
                 _this3.setState({
                     slideCount: _this3.state.slideCount + 1
                 });
+                if (_this3.state.slideCount > 2) {
+                    _this3.setState({
+                        slideCount: 1
+                    });
+                }
             }, _temp), _possibleConstructorReturn(_this3, _ret);
         }
 
         _createClass(Projects, [{
             key: 'render',
             value: function render() {
-                if (this.state.slideCount > 3) {
-                    this.setState({
-                        slideCount: 1
-                    });
-                } else if (this.state.slideCount < 0) {
-                    this.setState({
-                        slideCount: 3
-                    });
-                }
                 return _react2.default.createElement(
                     'section',
                     { className: 'grid space' },
@@ -13724,17 +13725,25 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { className: 'boxRow slider' },
                                 this.state.slideCount === 1 ? _react2.default.createElement(
                                     'div',
-                                    { className: 'slide' },
-                                    _react2.default.createElement('img', { src: './../images/1.jpeg' })
+                                    null,
+                                    _react2.default.createElement(
+                                        'a',
+                                        { href: 'https://tafarian.github.io/Sit-on-chair-project' },
+                                        _react2.default.createElement('img', { src: './../images/sitonchair.png' })
+                                    )
                                 ) : null,
                                 this.state.slideCount === 2 ? _react2.default.createElement(
                                     'div',
-                                    { className: 'slide' },
-                                    _react2.default.createElement('img', { src: './../images/2.jpeg' })
+                                    null,
+                                    _react2.default.createElement(
+                                        'a',
+                                        { href: 'https://tafarian.github.io/Furry-game' },
+                                        _react2.default.createElement('img', { src: './../images/furrygame.png' })
+                                    )
                                 ) : null,
                                 this.state.slideCount === 3 ? _react2.default.createElement(
                                     'div',
-                                    { className: 'slide' },
+                                    null,
                                     _react2.default.createElement('img', { src: './../images/3.jpeg' })
                                 ) : null
                             ),
@@ -25132,7 +25141,7 @@ exports = module.exports = __webpack_require__(217)(false);
 
 
 // module
-exports.push([module.i, ".grid {\n  width: 100%;\n  max-width: 1200px;\n  margin: 0 auto; }\n  .grid .row:before, .grid .row:after {\n    content: \"\";\n    display: table;\n    clear: both; }\n  .grid .row [class*='col-'] {\n    float: left;\n    min-height: 1px; }\n  .grid .row .col-1 {\n    width: 8.33333%; }\n  .grid .row .col-2 {\n    width: 16.66667%; }\n  .grid .row .col-3 {\n    width: 25%; }\n  .grid .row .col-4 {\n    width: 33.33333%; }\n  .grid .row .col-5 {\n    width: 41.66667%; }\n  .grid .row .col-6 {\n    width: 50%; }\n  .grid .row .col-7 {\n    width: 58.33333%; }\n  .grid .row .col-8 {\n    width: 66.66667%; }\n  .grid .row .col-9 {\n    width: 75%; }\n  .grid .row .col-10 {\n    width: 83.33333%; }\n  .grid .row .col-11 {\n    width: 91.66667%; }\n  .grid .row .col-12 {\n    width: 100%; }\n  @media (max-width: 640px) {\n    .grid .row [class*='col-'] {\n      float: none;\n      width: 100%; } }\n\n* {\n  box-sizing: border-box;\n  font-family: 'Macondo', cursive; }\n\nbody {\n  background-color: #405066; }\n\n#logo {\n  background-color: #8DA7BE;\n  height: 100px;\n  margin-bottom: 1px; }\n\n#rightBox {\n  height: 400px;\n  background-color: #CDE6F5; }\n\n.mainText {\n  color: white;\n  padding: 20px; }\n\n.menu {\n  height: 94px;\n  background-color: #707078;\n  margin: 5px;\n  border: 1px solid white; }\n  .menu a {\n    color: inherit;\n    text-decoration: none; }\n  .menu p {\n    text-align: center;\n    padding-top: 8px;\n    font-weight: 800;\n    font-size: 26px;\n    color: white; }\n    .menu p:hover {\n      font-size: 30px;\n      padding-top: 0; }\n  .menu:hover {\n    -webkit-box-shadow: inset 15px 15px 24px -8px #252c52;\n    -moz-box-shadow: inset 15px 15px 24px -8px #252c52;\n    box-shadow: inset 15px 15px 24px -8px #252c52; }\n\n#mainSection {\n  height: 400px;\n  background-color: #554640;\n  display: flex;\n  align-items: center;\n  justify-content: space-around; }\n  #mainSection .boxRow {\n    display: flex;\n    margin-right: 15px; }\n  #mainSection .arrows {\n    width: 48px;\n    height: 48px;\n    border-color: #000;\n    top: 50%; }\n  #mainSection .prev {\n    border-bottom: 6px solid;\n    border-left: 6px solid;\n    transform: rotate(45deg);\n    left: 10px; }\n  #mainSection .next {\n    border-bottom: 6px solid;\n    border-left: 6px solid;\n    transform: rotate(-135deg);\n    right: 10px; }\n\n#footer {\n  height: 100px;\n  background-color: #87919E;\n  margin-top: 1px; }\n  #footer img {\n    width: 106px;\n    height: 106px;\n    float: left;\n    padding-bottom: 6px; }\n  #footer p {\n    float: right;\n    color: white;\n    padding-top: 42px;\n    padding-right: 6px;\n    font-size: 24px; }\n\n#grumpy {\n  width: 100px;\n  height: 100px;\n  float: right;\n  margin-right: 20px;\n  margin-top: 26px; }\n\nh1 {\n  color: white;\n  float: left;\n  margin-left: 100px;\n  text-shadow: 2px 2px gray; }\n\n.clock {\n  float: right;\n  padding-right: 5px;\n  padding-top: 280px; }\n\n.slider {\n  list-style: none;\n  width: 400px;\n  height: 200px; }\n  .slider li {\n    display: none; }\n  .slider .visible {\n    display: inline-block; }\n", ""]);
+exports.push([module.i, ".grid {\n  width: 100%;\n  max-width: 1200px;\n  margin: 0 auto; }\n  .grid .row:before, .grid .row:after {\n    content: \"\";\n    display: table;\n    clear: both; }\n  .grid .row [class*='col-'] {\n    float: left;\n    min-height: 1px; }\n  .grid .row .col-1 {\n    width: 8.33333%; }\n  .grid .row .col-2 {\n    width: 16.66667%; }\n  .grid .row .col-3 {\n    width: 25%; }\n  .grid .row .col-4 {\n    width: 33.33333%; }\n  .grid .row .col-5 {\n    width: 41.66667%; }\n  .grid .row .col-6 {\n    width: 50%; }\n  .grid .row .col-7 {\n    width: 58.33333%; }\n  .grid .row .col-8 {\n    width: 66.66667%; }\n  .grid .row .col-9 {\n    width: 75%; }\n  .grid .row .col-10 {\n    width: 83.33333%; }\n  .grid .row .col-11 {\n    width: 91.66667%; }\n  .grid .row .col-12 {\n    width: 100%; }\n  @media (max-width: 640px) {\n    .grid .row [class*='col-'] {\n      float: none;\n      width: 100%; } }\n\n* {\n  box-sizing: border-box;\n  font-family: 'Macondo', cursive; }\n\nbody {\n  background-color: #405066; }\n\n#logo {\n  background-color: #8DA7BE;\n  height: 100px;\n  margin-bottom: 1px; }\n\n#rightBox {\n  height: 400px;\n  background-color: #CDE6F5; }\n\n.mainText {\n  color: white;\n  padding: 20px; }\n\n.menu {\n  height: 94px;\n  background-color: #707078;\n  margin: 5px;\n  border: 1px solid white; }\n  .menu a {\n    color: inherit;\n    text-decoration: none; }\n  .menu p {\n    text-align: center;\n    padding-top: 8px;\n    font-weight: 800;\n    font-size: 26px;\n    color: white; }\n    .menu p:hover {\n      font-size: 30px;\n      padding-top: 0; }\n  .menu:hover {\n    -webkit-box-shadow: inset 15px 15px 24px -8px #252c52;\n    -moz-box-shadow: inset 15px 15px 24px -8px #252c52;\n    box-shadow: inset 15px 15px 24px -8px #252c52; }\n\n#mainSection {\n  height: 400px;\n  background-color: #554640;\n  display: flex;\n  align-items: center;\n  justify-content: space-around; }\n  #mainSection .boxRow {\n    display: flex;\n    margin-right: 15px; }\n  #mainSection .arrows {\n    width: 48px;\n    height: 48px;\n    border-color: #000;\n    top: 50%; }\n  #mainSection .prev {\n    border-bottom: 6px solid;\n    border-left: 6px solid;\n    transform: rotate(45deg);\n    left: 10px; }\n  #mainSection .next {\n    border-bottom: 6px solid;\n    border-left: 6px solid;\n    transform: rotate(-135deg);\n    right: 10px; }\n\n#footer {\n  height: 100px;\n  background-color: #87919E;\n  margin-top: 1px; }\n  #footer img {\n    width: 106px;\n    height: 106px;\n    float: left;\n    padding-bottom: 6px; }\n  #footer p {\n    float: right;\n    color: white;\n    padding-top: 42px;\n    padding-right: 6px;\n    font-size: 24px; }\n\n#grumpy {\n  width: 100px;\n  height: 100px;\n  float: right;\n  margin-right: 20px;\n  margin-top: 26px; }\n\nh1 {\n  color: white;\n  float: left;\n  margin-left: 100px;\n  text-shadow: 2px 2px gray; }\n\n.clock {\n  float: right;\n  padding-right: 5px;\n  padding-top: 280px; }\n\n.slider {\n  width: 400px;\n  height: 200px; }\n  .slider img {\n    border: 1px solid black; }\n", ""]);
 
 // exports
 
