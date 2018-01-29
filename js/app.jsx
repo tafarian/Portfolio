@@ -17,12 +17,23 @@ document.addEventListener('DOMContentLoaded', function(){
             return (
                 <header className="grid">
                     <div className="row">
-                        <div className="col-12" id="logo">
-                            <h1>Portfolio</h1>
-                            <img id="grumpy" src="./../images/grumpy2.png"/>
-                        </div>
+                        <div className="col-12" id="logo"></div>
                     </div>
+                    <Menu />
                 </header>
+            )
+        }
+    }
+
+    class Menu extends React.Component {
+        render() {
+            return (
+                <div className="row" id="rightBox">
+                    <div className="menu col-3"><p><Link to="/">HOME</Link></p></div>
+                    <div className="menu col-3"><p><Link to="/aboutme">O MNIE</Link></p></div>
+                    <div className="menu col-3"><p><Link to="/projects">PROJEKTY</Link></p></div>
+                    <div className="menu col-3"><p><Link to="/contact">KONTAKT</Link></p></div>
+                </div>
             )
         }
     }
@@ -32,16 +43,9 @@ document.addEventListener('DOMContentLoaded', function(){
             return (
                 <section className="grid space">
                     <div className="row">
-                        <div className="col-9" id="mainSection">
-                            <p className="mainText">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan lectus ex, a pellentesque arcu consequat in. Proin finibus luctus ipsum, a volutpat arcu auctor ut. In iaculis, nisl sit amet dictum mattis, augue lacus ornare massa, id tempor orci neque ac ligula. Cras cursus fermentum commodo. Vivamus volutpat nulla vel enim porta, vel congue augue scelerisque. In ultricies quam diam, in viverra diam posuere quis. Curabitur vel ornare ante, sed maximus eros. In interdum lacus et lectus imperdiet, eget auctor risus mollis. Donec nunc dui, vehicula in sapien vitae, viverra dignissim urna.
-
-                                Nunc eget odio eget dui tempus hendrerit nec at sem. Ut vulputate felis et auctor volutpat. Donec vel lectus congue, rhoncus sapien in, maximus risus. Nullam ac enim dictum, mattis mauris sed, egestas nunc. Pellentesque auctor id urna faucibus fermentum. Nullam ac elementum sem. Suspendisse potenti. Morbi quam magna, molestie eget velit nec, fermentum ultrices mi.
-
-                                Donec tortor massa, dictum nec tortor et, sollicitudin eleifend leo. Pellentesque sit amet ligula euismod mi facilisis congue. Sed consectetur dictum tortor, a interdum magna condimentum vel. Donec ut ex sit amet orci maximus ultrices. Aliquam id interdum nibh. Ut rutrum posuere congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed nibh quis quam tincidunt condimentum. Donec at augue pulvinar, commodo ligula eu, finibus augue. Mauris convallis varius nulla, eu egestas est vestibulum sit amet. Praesent pharetra efficitur libero at semper. Aenean faucibus quam lorem, quis accumsan augue faucibus efficitur.
-                            </p>
+                        <div className="col-12" id="home">
+                            <img style={{width: "250px", height: "250px", margin: "0 auto", display: "block"}} src="./../images/undercon.png"></img>
                         </div>
-                        <Menu />
                     </div>
                 </section>
             )
@@ -80,32 +84,32 @@ document.addEventListener('DOMContentLoaded', function(){
             return (
                 <section className="grid space">
                     <div className="row">
-                        <div className="col-9" id="mainSection">
+                        <div className="col-12" id="mainSection">
                             <div className="arrows prev"
                                  onClick={this.handleClickPrev}></div>
                             <div className="boxRow slider">
                                 { this.state.slideCount === 1 ?
                                     <div>
-                                        <a href="https://tafarian.github.io/Sit-on-chair-project"><img src="./../images/sitonchair.png"/>
+                                        <a href="https://tafarian.github.io/Sit-on-chair-project" target="_blank"><img src="./../images/sitonchair.png"/>
                                         </a>
                                     </div> :
                                     null }
                                 { this.state.slideCount === 2 ?
                                     <div>
-                                        <a href="https://tafarian.github.io/Furry-game"><img src="./../images/furrygame.png"/>
+                                        <a href="https://tafarian.github.io/Furry-game" target="_blank"><img src="./../images/furrygame.png"/>
                                         </a>
                                     </div> :
                                     null }
                                 { this.state.slideCount === 3 ?
                                     <div>
-                                        <img src="./../images/3.jpeg"/>
+                                        <a href="https://tafarian.github.io/Movie-finder-app/" target="_blank"><img src="./../images/mfa.png"/>
+                                        </a>
                                     </div> :
                                     null }
                             </div>
                             <div className="arrows next"
                                  onClick={this.handleClickNext}></div>
                         </div>
-                        <Menu />
                     </div>
                 </section>
             )
@@ -117,16 +121,11 @@ document.addEventListener('DOMContentLoaded', function(){
             return (
                 <section className="grid space">
                     <div className="row">
-                        <div className="col-9" id="mainSection">
-                            <p className="mainText">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan lectus ex, a pellentesque arcu consequat in. Proin finibus luctus ipsum, a volutpat arcu auctor ut. In iaculis, nisl sit amet dictum mattis, augue lacus ornare massa, id tempor orci neque ac ligula. Cras cursus fermentum commodo. Vivamus volutpat nulla vel enim porta, vel congue augue scelerisque. In ultricies quam diam, in viverra diam posuere quis. Curabitur vel ornare ante, sed maximus eros. In interdum lacus et lectus imperdiet, eget auctor risus mollis. Donec nunc dui, vehicula in sapien vitae, viverra dignissim urna.
-
-                                Nunc eget odio eget dui tempus hendrerit nec at sem. Ut vulputate felis et auctor volutpat. Donec vel lectus congue, rhoncus sapien in, maximus risus. Nullam ac enim dictum, mattis mauris sed, egestas nunc. Pellentesque auctor id urna faucibus fermentum. Nullam ac elementum sem. Suspendisse potenti. Morbi quam magna, molestie eget velit nec, fermentum ultrices mi.
-
-                                Donec tortor massa, dictum nec tortor et, sollicitudin eleifend leo. Pellentesque sit amet ligula euismod mi facilisis congue. Sed consectetur dictum tortor, a interdum magna condimentum vel. Donec ut ex sit amet orci maximus ultrices. Aliquam id interdum nibh. Ut rutrum posuere congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed nibh quis quam tincidunt condimentum. Donec at augue pulvinar, commodo ligula eu, finibus augue. Mauris convallis varius nulla, eu egestas est vestibulum sit amet. Praesent pharetra efficitur libero at semper. Aenean faucibus quam lorem, quis accumsan augue faucibus efficitur.
-                            </p>
+                        <div className="col-12" id="aboutme">
+                            <a href="http://imgie.pl/images/2018/01/25/HTMLHTMLJavascriptPHPSQLUNIXScripting4b148.png" target="_blank">
+                                <img src="/./../images/cv.png"></img>
+                            </a>
                         </div>
-                        <Menu />
                     </div>
                 </section>
             )
@@ -134,35 +133,41 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
     class Contact extends React.Component {
+        state = {
+            hover: false,
+        };
+
+        handleMouseClick() {
+            if (this.state.hover === false) {
+                this.setState({hover: true})
+            } else {
+                this.setState({hover: false})
+            }
+        }
+
         render() {
+
+            const tooltipStyle = {
+                display: this.state.hover ? 'block' : 'none'
+            };
+
             return (
                 <section className="grid space">
                     <div className="row">
-                        <div className="col-9" id="mainSection">
-                            <p className="mainText">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan lectus ex, a pellentesque arcu consequat in. Proin finibus luctus ipsum, a volutpat arcu auctor ut. In iaculis, nisl sit amet dictum mattis, augue lacus ornare massa, id tempor orci neque ac ligula. Cras cursus fermentum commodo. Vivamus volutpat nulla vel enim porta, vel congue augue scelerisque. In ultricies quam diam, in viverra diam posuere quis. Curabitur vel ornare ante, sed maximus eros. In interdum lacus et lectus imperdiet, eget auctor risus mollis. Donec nunc dui, vehicula in sapien vitae, viverra dignissim urna.
-
-                                Nunc eget odio eget dui tempus hendrerit nec at sem. Ut vulputate felis et auctor volutpat. Donec vel lectus congue, rhoncus sapien in, maximus risus. Nullam ac enim dictum, mattis mauris sed, egestas nunc. Pellentesque auctor id urna faucibus fermentum. Nullam ac elementum sem. Suspendisse potenti. Morbi quam magna, molestie eget velit nec, fermentum ultrices mi.
-
-                                Donec tortor massa, dictum nec tortor et, sollicitudin eleifend leo. Pellentesque sit amet ligula euismod mi facilisis congue. Sed consectetur dictum tortor, a interdum magna condimentum vel. Donec ut ex sit amet orci maximus ultrices. Aliquam id interdum nibh. Ut rutrum posuere congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed nibh quis quam tincidunt condimentum. Donec at augue pulvinar, commodo ligula eu, finibus augue. Mauris convallis varius nulla, eu egestas est vestibulum sit amet. Praesent pharetra efficitur libero at semper. Aenean faucibus quam lorem, quis accumsan augue faucibus efficitur.
-                            </p>
+                        <div className="col-12" id="mainSection">
+                            <a href="https://github.com/tafarian/" target="_blank">
+                            <i className="fab fa-github" style={{fontSize: "45px", color: "black"}}></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/jakub-wyczesany-085562157/" target="_blank">
+                            <i className="fab fa-linkedin" style={{fontSize: "45px", color: "black"}}></i>
+                            </a>
+                            <i onClick={this.handleMouseClick.bind(this)}
+                               className="fas fa-at"
+                               style={{fontSize: "45px", color: "black"}}></i>
+                            <div className="mailTooltip" style={tooltipStyle}>ghaelios@gmail.com</div>
                         </div>
-                        <Menu />
                     </div>
                 </section>
-            )
-        }
-    }
-
-    class Menu extends React.Component {
-        render() {
-            return (
-                <div className="col-3" id="rightBox">
-                    <div className="menu"><p><Link to="/">HOME</Link></p></div>
-                    <div className="menu"><p><Link to="/aboutme">O MNIE</Link></p></div>
-                    <div className="menu"><p><Link to="/projects">PROJEKTY</Link></p></div>
-                    <div className="menu"><p><Link to="/contact">KONTAKT</Link></p></div>
-                </div>
             )
         }
     }
@@ -173,46 +178,11 @@ document.addEventListener('DOMContentLoaded', function(){
                 <footer className="grid space">
                     <div className="row">
                         <div className="col-12" id="footer">
-                            <img src="./../images/grumpy.png"/>
-                            <p>Jakub Wyczesany 2018</p>
+                            <p>&#174; Jakub Wyczesany 2018</p>
                         </div>
                     </div>
                 </footer>
             )
-        }
-    }
-
-    class Clock extends React.Component {
-        constructor(props) {
-            super(props);
-
-            this.state = {
-                date: new Date(),
-            }
-        }
-
-        componentDidMount() {
-            this.interval = setInterval( () => {
-                this.setState({
-                    date: new Date(),
-                })
-            }, 1000)
-        }
-
-        componentWillUnmount() {
-            clearInterval(this.interval);
-        }
-
-        render() {
-            return <div>
-                <ClockTime time={this.state.date} />
-            </div>
-        }
-    }
-
-    class ClockTime extends React.Component {
-        render() {
-            return <h1 className="clock">{ this.props.time.toLocaleTimeString() }</h1>
         }
     }
 
@@ -229,7 +199,28 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
     class App extends React.Component {
+        state = {
+            loading: true,
+        };
+
+        componentDidMount() {
+            setTimeout(() =>
+                this.setState({
+                    loading: false
+                }), 1000);
+        }
+
         render() {
+
+            if(this.state.loading === true) {
+                return (
+                    <div className="loader">
+                        <div id="shadow"></div>
+                        <div id="box"></div>
+                    </div>
+                )
+            }
+
             return(
                 <Router history={hashHistory}>
                     <Route path='/' component={Template}>

@@ -13615,17 +13615,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     _react2.default.createElement(
                         'div',
                         { className: 'row' },
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'col-12', id: 'logo' },
-                            _react2.default.createElement(
-                                'h1',
-                                null,
-                                'Portfolio'
-                            ),
-                            _react2.default.createElement('img', { id: 'grumpy', src: './../images/grumpy2.png' })
-                        )
-                    )
+                        _react2.default.createElement('div', { className: 'col-12', id: 'logo' })
+                    ),
+                    _react2.default.createElement(Menu, null)
                 );
             }
         }]);
@@ -13633,8 +13625,82 @@ document.addEventListener('DOMContentLoaded', function () {
         return Header;
     }(_react2.default.Component);
 
-    var Home = function (_React$Component2) {
-        _inherits(Home, _React$Component2);
+    var Menu = function (_React$Component2) {
+        _inherits(Menu, _React$Component2);
+
+        function Menu() {
+            _classCallCheck(this, Menu);
+
+            return _possibleConstructorReturn(this, (Menu.__proto__ || Object.getPrototypeOf(Menu)).apply(this, arguments));
+        }
+
+        _createClass(Menu, [{
+            key: 'render',
+            value: function render() {
+                return _react2.default.createElement(
+                    'div',
+                    { className: 'row', id: 'rightBox' },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'menu col-3' },
+                        _react2.default.createElement(
+                            'p',
+                            null,
+                            _react2.default.createElement(
+                                _reactRouter.Link,
+                                { to: '/' },
+                                'HOME'
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'menu col-3' },
+                        _react2.default.createElement(
+                            'p',
+                            null,
+                            _react2.default.createElement(
+                                _reactRouter.Link,
+                                { to: '/aboutme' },
+                                'O MNIE'
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'menu col-3' },
+                        _react2.default.createElement(
+                            'p',
+                            null,
+                            _react2.default.createElement(
+                                _reactRouter.Link,
+                                { to: '/projects' },
+                                'PROJEKTY'
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'menu col-3' },
+                        _react2.default.createElement(
+                            'p',
+                            null,
+                            _react2.default.createElement(
+                                _reactRouter.Link,
+                                { to: '/contact' },
+                                'KONTAKT'
+                            )
+                        )
+                    )
+                );
+            }
+        }]);
+
+        return Menu;
+    }(_react2.default.Component);
+
+    var Home = function (_React$Component3) {
+        _inherits(Home, _React$Component3);
 
         function Home() {
             _classCallCheck(this, Home);
@@ -13653,14 +13719,9 @@ document.addEventListener('DOMContentLoaded', function () {
                         { className: 'row' },
                         _react2.default.createElement(
                             'div',
-                            { className: 'col-9', id: 'mainSection' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'mainText' },
-                                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan lectus ex, a pellentesque arcu consequat in. Proin finibus luctus ipsum, a volutpat arcu auctor ut. In iaculis, nisl sit amet dictum mattis, augue lacus ornare massa, id tempor orci neque ac ligula. Cras cursus fermentum commodo. Vivamus volutpat nulla vel enim porta, vel congue augue scelerisque. In ultricies quam diam, in viverra diam posuere quis. Curabitur vel ornare ante, sed maximus eros. In interdum lacus et lectus imperdiet, eget auctor risus mollis. Donec nunc dui, vehicula in sapien vitae, viverra dignissim urna. Nunc eget odio eget dui tempus hendrerit nec at sem. Ut vulputate felis et auctor volutpat. Donec vel lectus congue, rhoncus sapien in, maximus risus. Nullam ac enim dictum, mattis mauris sed, egestas nunc. Pellentesque auctor id urna faucibus fermentum. Nullam ac elementum sem. Suspendisse potenti. Morbi quam magna, molestie eget velit nec, fermentum ultrices mi. Donec tortor massa, dictum nec tortor et, sollicitudin eleifend leo. Pellentesque sit amet ligula euismod mi facilisis congue. Sed consectetur dictum tortor, a interdum magna condimentum vel. Donec ut ex sit amet orci maximus ultrices. Aliquam id interdum nibh. Ut rutrum posuere congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed nibh quis quam tincidunt condimentum. Donec at augue pulvinar, commodo ligula eu, finibus augue. Mauris convallis varius nulla, eu egestas est vestibulum sit amet. Praesent pharetra efficitur libero at semper. Aenean faucibus quam lorem, quis accumsan augue faucibus efficitur.'
-                            )
-                        ),
-                        _react2.default.createElement(Menu, null)
+                            { className: 'col-12', id: 'home' },
+                            _react2.default.createElement('img', { style: { width: "250px", height: "250px", margin: "0 auto", display: "block" }, src: './../images/undercon.png' })
+                        )
                     )
                 );
             }
@@ -13669,13 +13730,13 @@ document.addEventListener('DOMContentLoaded', function () {
         return Home;
     }(_react2.default.Component);
 
-    var Projects = function (_React$Component3) {
-        _inherits(Projects, _React$Component3);
+    var Projects = function (_React$Component4) {
+        _inherits(Projects, _React$Component4);
 
         function Projects() {
             var _ref;
 
-            var _temp, _this3, _ret;
+            var _temp, _this4, _ret;
 
             _classCallCheck(this, Projects);
 
@@ -13683,27 +13744,27 @@ document.addEventListener('DOMContentLoaded', function () {
                 args[_key] = arguments[_key];
             }
 
-            return _ret = (_temp = (_this3 = _possibleConstructorReturn(this, (_ref = Projects.__proto__ || Object.getPrototypeOf(Projects)).call.apply(_ref, [this].concat(args))), _this3), _this3.state = {
+            return _ret = (_temp = (_this4 = _possibleConstructorReturn(this, (_ref = Projects.__proto__ || Object.getPrototypeOf(Projects)).call.apply(_ref, [this].concat(args))), _this4), _this4.state = {
                 slideCount: 1
-            }, _this3.handleClickPrev = function () {
-                _this3.setState({
-                    slideCount: _this3.state.slideCount - 1
+            }, _this4.handleClickPrev = function () {
+                _this4.setState({
+                    slideCount: _this4.state.slideCount - 1
                 });
-                if (_this3.state.slideCount <= 1) {
-                    _this3.setState({
+                if (_this4.state.slideCount <= 1) {
+                    _this4.setState({
                         slideCount: 3
                     });
                 }
-            }, _this3.handleClickNext = function () {
-                _this3.setState({
-                    slideCount: _this3.state.slideCount + 1
+            }, _this4.handleClickNext = function () {
+                _this4.setState({
+                    slideCount: _this4.state.slideCount + 1
                 });
-                if (_this3.state.slideCount > 2) {
-                    _this3.setState({
+                if (_this4.state.slideCount > 2) {
+                    _this4.setState({
                         slideCount: 1
                     });
                 }
-            }, _temp), _possibleConstructorReturn(_this3, _ret);
+            }, _temp), _possibleConstructorReturn(_this4, _ret);
         }
 
         _createClass(Projects, [{
@@ -13717,7 +13778,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         { className: 'row' },
                         _react2.default.createElement(
                             'div',
-                            { className: 'col-9', id: 'mainSection' },
+                            { className: 'col-12', id: 'mainSection' },
                             _react2.default.createElement('div', { className: 'arrows prev',
                                 onClick: this.handleClickPrev }),
                             _react2.default.createElement(
@@ -13728,7 +13789,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                     null,
                                     _react2.default.createElement(
                                         'a',
-                                        { href: 'https://tafarian.github.io/Sit-on-chair-project' },
+                                        { href: 'https://tafarian.github.io/Sit-on-chair-project', target: '_blank' },
                                         _react2.default.createElement('img', { src: './../images/sitonchair.png' })
                                     )
                                 ) : null,
@@ -13737,20 +13798,23 @@ document.addEventListener('DOMContentLoaded', function () {
                                     null,
                                     _react2.default.createElement(
                                         'a',
-                                        { href: 'https://tafarian.github.io/Furry-game' },
+                                        { href: 'https://tafarian.github.io/Furry-game', target: '_blank' },
                                         _react2.default.createElement('img', { src: './../images/furrygame.png' })
                                     )
                                 ) : null,
                                 this.state.slideCount === 3 ? _react2.default.createElement(
                                     'div',
                                     null,
-                                    _react2.default.createElement('img', { src: './../images/3.jpeg' })
+                                    _react2.default.createElement(
+                                        'a',
+                                        { href: 'https://tafarian.github.io/Movie-finder-app/', target: '_blank' },
+                                        _react2.default.createElement('img', { src: './../images/mfa.png' })
+                                    )
                                 ) : null
                             ),
                             _react2.default.createElement('div', { className: 'arrows next',
                                 onClick: this.handleClickNext })
-                        ),
-                        _react2.default.createElement(Menu, null)
+                        )
                     )
                 );
             }
@@ -13759,8 +13823,8 @@ document.addEventListener('DOMContentLoaded', function () {
         return Projects;
     }(_react2.default.Component);
 
-    var AboutMe = function (_React$Component4) {
-        _inherits(AboutMe, _React$Component4);
+    var AboutMe = function (_React$Component5) {
+        _inherits(AboutMe, _React$Component5);
 
         function AboutMe() {
             _classCallCheck(this, AboutMe);
@@ -13779,14 +13843,13 @@ document.addEventListener('DOMContentLoaded', function () {
                         { className: 'row' },
                         _react2.default.createElement(
                             'div',
-                            { className: 'col-9', id: 'mainSection' },
+                            { className: 'col-12', id: 'aboutme' },
                             _react2.default.createElement(
-                                'p',
-                                { className: 'mainText' },
-                                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan lectus ex, a pellentesque arcu consequat in. Proin finibus luctus ipsum, a volutpat arcu auctor ut. In iaculis, nisl sit amet dictum mattis, augue lacus ornare massa, id tempor orci neque ac ligula. Cras cursus fermentum commodo. Vivamus volutpat nulla vel enim porta, vel congue augue scelerisque. In ultricies quam diam, in viverra diam posuere quis. Curabitur vel ornare ante, sed maximus eros. In interdum lacus et lectus imperdiet, eget auctor risus mollis. Donec nunc dui, vehicula in sapien vitae, viverra dignissim urna. Nunc eget odio eget dui tempus hendrerit nec at sem. Ut vulputate felis et auctor volutpat. Donec vel lectus congue, rhoncus sapien in, maximus risus. Nullam ac enim dictum, mattis mauris sed, egestas nunc. Pellentesque auctor id urna faucibus fermentum. Nullam ac elementum sem. Suspendisse potenti. Morbi quam magna, molestie eget velit nec, fermentum ultrices mi. Donec tortor massa, dictum nec tortor et, sollicitudin eleifend leo. Pellentesque sit amet ligula euismod mi facilisis congue. Sed consectetur dictum tortor, a interdum magna condimentum vel. Donec ut ex sit amet orci maximus ultrices. Aliquam id interdum nibh. Ut rutrum posuere congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed nibh quis quam tincidunt condimentum. Donec at augue pulvinar, commodo ligula eu, finibus augue. Mauris convallis varius nulla, eu egestas est vestibulum sit amet. Praesent pharetra efficitur libero at semper. Aenean faucibus quam lorem, quis accumsan augue faucibus efficitur.'
+                                'a',
+                                { href: 'http://imgie.pl/images/2018/01/25/HTMLHTMLJavascriptPHPSQLUNIXScripting4b148.png', target: '_blank' },
+                                _react2.default.createElement('img', { src: '/./../images/cv.png' })
                             )
-                        ),
-                        _react2.default.createElement(Menu, null)
+                        )
                     )
                 );
             }
@@ -13795,18 +13858,42 @@ document.addEventListener('DOMContentLoaded', function () {
         return AboutMe;
     }(_react2.default.Component);
 
-    var Contact = function (_React$Component5) {
-        _inherits(Contact, _React$Component5);
+    var Contact = function (_React$Component6) {
+        _inherits(Contact, _React$Component6);
 
         function Contact() {
+            var _ref2;
+
+            var _temp2, _this6, _ret2;
+
             _classCallCheck(this, Contact);
 
-            return _possibleConstructorReturn(this, (Contact.__proto__ || Object.getPrototypeOf(Contact)).apply(this, arguments));
+            for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+                args[_key2] = arguments[_key2];
+            }
+
+            return _ret2 = (_temp2 = (_this6 = _possibleConstructorReturn(this, (_ref2 = Contact.__proto__ || Object.getPrototypeOf(Contact)).call.apply(_ref2, [this].concat(args))), _this6), _this6.state = {
+                hover: false
+            }, _temp2), _possibleConstructorReturn(_this6, _ret2);
         }
 
         _createClass(Contact, [{
+            key: 'handleMouseClick',
+            value: function handleMouseClick() {
+                if (this.state.hover === false) {
+                    this.setState({ hover: true });
+                } else {
+                    this.setState({ hover: false });
+                }
+            }
+        }, {
             key: 'render',
             value: function render() {
+
+                var tooltipStyle = {
+                    display: this.state.hover ? 'block' : 'none'
+                };
+
                 return _react2.default.createElement(
                     'section',
                     { className: 'grid space' },
@@ -13815,94 +13902,32 @@ document.addEventListener('DOMContentLoaded', function () {
                         { className: 'row' },
                         _react2.default.createElement(
                             'div',
-                            { className: 'col-9', id: 'mainSection' },
+                            { className: 'col-12', id: 'mainSection' },
                             _react2.default.createElement(
-                                'p',
-                                { className: 'mainText' },
-                                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan lectus ex, a pellentesque arcu consequat in. Proin finibus luctus ipsum, a volutpat arcu auctor ut. In iaculis, nisl sit amet dictum mattis, augue lacus ornare massa, id tempor orci neque ac ligula. Cras cursus fermentum commodo. Vivamus volutpat nulla vel enim porta, vel congue augue scelerisque. In ultricies quam diam, in viverra diam posuere quis. Curabitur vel ornare ante, sed maximus eros. In interdum lacus et lectus imperdiet, eget auctor risus mollis. Donec nunc dui, vehicula in sapien vitae, viverra dignissim urna. Nunc eget odio eget dui tempus hendrerit nec at sem. Ut vulputate felis et auctor volutpat. Donec vel lectus congue, rhoncus sapien in, maximus risus. Nullam ac enim dictum, mattis mauris sed, egestas nunc. Pellentesque auctor id urna faucibus fermentum. Nullam ac elementum sem. Suspendisse potenti. Morbi quam magna, molestie eget velit nec, fermentum ultrices mi. Donec tortor massa, dictum nec tortor et, sollicitudin eleifend leo. Pellentesque sit amet ligula euismod mi facilisis congue. Sed consectetur dictum tortor, a interdum magna condimentum vel. Donec ut ex sit amet orci maximus ultrices. Aliquam id interdum nibh. Ut rutrum posuere congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed nibh quis quam tincidunt condimentum. Donec at augue pulvinar, commodo ligula eu, finibus augue. Mauris convallis varius nulla, eu egestas est vestibulum sit amet. Praesent pharetra efficitur libero at semper. Aenean faucibus quam lorem, quis accumsan augue faucibus efficitur.'
+                                'a',
+                                { href: 'https://github.com/tafarian/', target: '_blank' },
+                                _react2.default.createElement('i', { className: 'fab fa-github', style: { fontSize: "45px", color: "black" } })
+                            ),
+                            _react2.default.createElement(
+                                'a',
+                                { href: 'https://www.linkedin.com/in/jakub-wyczesany-085562157/', target: '_blank' },
+                                _react2.default.createElement('i', { className: 'fab fa-linkedin', style: { fontSize: "45px", color: "black" } })
+                            ),
+                            _react2.default.createElement('i', { onClick: this.handleMouseClick.bind(this),
+                                className: 'fas fa-at',
+                                style: { fontSize: "45px", color: "black" } }),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'mailTooltip', style: tooltipStyle },
+                                'ghaelios@gmail.com'
                             )
-                        ),
-                        _react2.default.createElement(Menu, null)
+                        )
                     )
                 );
             }
         }]);
 
         return Contact;
-    }(_react2.default.Component);
-
-    var Menu = function (_React$Component6) {
-        _inherits(Menu, _React$Component6);
-
-        function Menu() {
-            _classCallCheck(this, Menu);
-
-            return _possibleConstructorReturn(this, (Menu.__proto__ || Object.getPrototypeOf(Menu)).apply(this, arguments));
-        }
-
-        _createClass(Menu, [{
-            key: 'render',
-            value: function render() {
-                return _react2.default.createElement(
-                    'div',
-                    { className: 'col-3', id: 'rightBox' },
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'menu' },
-                        _react2.default.createElement(
-                            'p',
-                            null,
-                            _react2.default.createElement(
-                                _reactRouter.Link,
-                                { to: '/' },
-                                'HOME'
-                            )
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'menu' },
-                        _react2.default.createElement(
-                            'p',
-                            null,
-                            _react2.default.createElement(
-                                _reactRouter.Link,
-                                { to: '/aboutme' },
-                                'O MNIE'
-                            )
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'menu' },
-                        _react2.default.createElement(
-                            'p',
-                            null,
-                            _react2.default.createElement(
-                                _reactRouter.Link,
-                                { to: '/projects' },
-                                'PROJEKTY'
-                            )
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'menu' },
-                        _react2.default.createElement(
-                            'p',
-                            null,
-                            _react2.default.createElement(
-                                _reactRouter.Link,
-                                { to: '/contact' },
-                                'KONTAKT'
-                            )
-                        )
-                    )
-                );
-            }
-        }]);
-
-        return Menu;
     }(_react2.default.Component);
 
     var Footer = function (_React$Component7) {
@@ -13926,11 +13951,10 @@ document.addEventListener('DOMContentLoaded', function () {
                         _react2.default.createElement(
                             'div',
                             { className: 'col-12', id: 'footer' },
-                            _react2.default.createElement('img', { src: './../images/grumpy.png' }),
                             _react2.default.createElement(
                                 'p',
                                 null,
-                                'Jakub Wyczesany 2018'
+                                '\xAE Jakub Wyczesany 2018'
                             )
                         )
                     )
@@ -13941,75 +13965,8 @@ document.addEventListener('DOMContentLoaded', function () {
         return Footer;
     }(_react2.default.Component);
 
-    var Clock = function (_React$Component8) {
-        _inherits(Clock, _React$Component8);
-
-        function Clock(props) {
-            _classCallCheck(this, Clock);
-
-            var _this8 = _possibleConstructorReturn(this, (Clock.__proto__ || Object.getPrototypeOf(Clock)).call(this, props));
-
-            _this8.state = {
-                date: new Date()
-            };
-            return _this8;
-        }
-
-        _createClass(Clock, [{
-            key: 'componentDidMount',
-            value: function componentDidMount() {
-                var _this9 = this;
-
-                this.interval = setInterval(function () {
-                    _this9.setState({
-                        date: new Date()
-                    });
-                }, 1000);
-            }
-        }, {
-            key: 'componentWillUnmount',
-            value: function componentWillUnmount() {
-                clearInterval(this.interval);
-            }
-        }, {
-            key: 'render',
-            value: function render() {
-                return _react2.default.createElement(
-                    'div',
-                    null,
-                    _react2.default.createElement(ClockTime, { time: this.state.date })
-                );
-            }
-        }]);
-
-        return Clock;
-    }(_react2.default.Component);
-
-    var ClockTime = function (_React$Component9) {
-        _inherits(ClockTime, _React$Component9);
-
-        function ClockTime() {
-            _classCallCheck(this, ClockTime);
-
-            return _possibleConstructorReturn(this, (ClockTime.__proto__ || Object.getPrototypeOf(ClockTime)).apply(this, arguments));
-        }
-
-        _createClass(ClockTime, [{
-            key: 'render',
-            value: function render() {
-                return _react2.default.createElement(
-                    'h1',
-                    { className: 'clock' },
-                    this.props.time.toLocaleTimeString()
-                );
-            }
-        }]);
-
-        return ClockTime;
-    }(_react2.default.Component);
-
-    var Template = function (_React$Component10) {
-        _inherits(Template, _React$Component10);
+    var Template = function (_React$Component8) {
+        _inherits(Template, _React$Component8);
 
         function Template() {
             _classCallCheck(this, Template);
@@ -14033,18 +13990,49 @@ document.addEventListener('DOMContentLoaded', function () {
         return Template;
     }(_react2.default.Component);
 
-    var App = function (_React$Component11) {
-        _inherits(App, _React$Component11);
+    var App = function (_React$Component9) {
+        _inherits(App, _React$Component9);
 
         function App() {
+            var _ref3;
+
+            var _temp3, _this9, _ret3;
+
             _classCallCheck(this, App);
 
-            return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+            for (var _len3 = arguments.length, args = Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+                args[_key3] = arguments[_key3];
+            }
+
+            return _ret3 = (_temp3 = (_this9 = _possibleConstructorReturn(this, (_ref3 = App.__proto__ || Object.getPrototypeOf(App)).call.apply(_ref3, [this].concat(args))), _this9), _this9.state = {
+                loading: true
+            }, _temp3), _possibleConstructorReturn(_this9, _ret3);
         }
 
         _createClass(App, [{
+            key: 'componentDidMount',
+            value: function componentDidMount() {
+                var _this10 = this;
+
+                setTimeout(function () {
+                    return _this10.setState({
+                        loading: false
+                    });
+                }, 1000);
+            }
+        }, {
             key: 'render',
             value: function render() {
+
+                if (this.state.loading === true) {
+                    return _react2.default.createElement(
+                        'div',
+                        { className: 'loader' },
+                        _react2.default.createElement('div', { id: 'shadow' }),
+                        _react2.default.createElement('div', { id: 'box' })
+                    );
+                }
+
                 return _react2.default.createElement(
                     _reactRouter.Router,
                     { history: _reactRouter.hashHistory },
@@ -25141,7 +25129,7 @@ exports = module.exports = __webpack_require__(217)(false);
 
 
 // module
-exports.push([module.i, ".grid {\n  width: 100%;\n  max-width: 1200px;\n  margin: 0 auto; }\n  .grid .row:before, .grid .row:after {\n    content: \"\";\n    display: table;\n    clear: both; }\n  .grid .row [class*='col-'] {\n    float: left;\n    min-height: 1px; }\n  .grid .row .col-1 {\n    width: 8.33333%; }\n  .grid .row .col-2 {\n    width: 16.66667%; }\n  .grid .row .col-3 {\n    width: 25%; }\n  .grid .row .col-4 {\n    width: 33.33333%; }\n  .grid .row .col-5 {\n    width: 41.66667%; }\n  .grid .row .col-6 {\n    width: 50%; }\n  .grid .row .col-7 {\n    width: 58.33333%; }\n  .grid .row .col-8 {\n    width: 66.66667%; }\n  .grid .row .col-9 {\n    width: 75%; }\n  .grid .row .col-10 {\n    width: 83.33333%; }\n  .grid .row .col-11 {\n    width: 91.66667%; }\n  .grid .row .col-12 {\n    width: 100%; }\n  @media (max-width: 640px) {\n    .grid .row [class*='col-'] {\n      float: none;\n      width: 100%; } }\n\n* {\n  box-sizing: border-box;\n  font-family: 'Macondo', cursive; }\n\nbody {\n  background-color: #405066; }\n\n#logo {\n  background-color: #8DA7BE;\n  height: 100px;\n  margin-bottom: 1px; }\n\n#rightBox {\n  height: 400px;\n  background-color: #CDE6F5; }\n\n.mainText {\n  color: white;\n  padding: 20px; }\n\n.menu {\n  height: 94px;\n  background-color: #707078;\n  margin: 5px;\n  border: 1px solid white; }\n  .menu a {\n    color: inherit;\n    text-decoration: none; }\n  .menu p {\n    text-align: center;\n    padding-top: 8px;\n    font-weight: 800;\n    font-size: 26px;\n    color: white; }\n    .menu p:hover {\n      font-size: 30px;\n      padding-top: 0; }\n  .menu:hover {\n    -webkit-box-shadow: inset 15px 15px 24px -8px #252c52;\n    -moz-box-shadow: inset 15px 15px 24px -8px #252c52;\n    box-shadow: inset 15px 15px 24px -8px #252c52; }\n\n#mainSection {\n  height: 400px;\n  background-color: #554640;\n  display: flex;\n  align-items: center;\n  justify-content: space-around; }\n  #mainSection .boxRow {\n    display: flex;\n    margin-right: 15px; }\n  #mainSection .arrows {\n    width: 48px;\n    height: 48px;\n    border-color: #000;\n    top: 50%; }\n  #mainSection .prev {\n    border-bottom: 6px solid;\n    border-left: 6px solid;\n    transform: rotate(45deg);\n    left: 10px; }\n  #mainSection .next {\n    border-bottom: 6px solid;\n    border-left: 6px solid;\n    transform: rotate(-135deg);\n    right: 10px; }\n\n#footer {\n  height: 100px;\n  background-color: #87919E;\n  margin-top: 1px; }\n  #footer img {\n    width: 106px;\n    height: 106px;\n    float: left;\n    padding-bottom: 6px; }\n  #footer p {\n    float: right;\n    color: white;\n    padding-top: 42px;\n    padding-right: 6px;\n    font-size: 24px; }\n\n#grumpy {\n  width: 100px;\n  height: 100px;\n  float: right;\n  margin-right: 20px;\n  margin-top: 26px; }\n\nh1 {\n  color: white;\n  float: left;\n  margin-left: 100px;\n  text-shadow: 2px 2px gray; }\n\n.clock {\n  float: right;\n  padding-right: 5px;\n  padding-top: 280px; }\n\n.slider {\n  width: 400px;\n  height: 200px; }\n  .slider img {\n    border: 1px solid black; }\n", ""]);
+exports.push([module.i, ".grid {\n  width: 100%;\n  max-width: 1200px;\n  margin: 0 auto; }\n  .grid .row:before, .grid .row:after {\n    content: \"\";\n    display: table;\n    clear: both; }\n  .grid .row [class*='col-'] {\n    float: left;\n    min-height: 1px; }\n  .grid .row .col-1 {\n    width: 8.33333%; }\n  .grid .row .col-2 {\n    width: 16.66667%; }\n  .grid .row .col-3 {\n    width: 25%; }\n  .grid .row .col-4 {\n    width: 33.33333%; }\n  .grid .row .col-5 {\n    width: 41.66667%; }\n  .grid .row .col-6 {\n    width: 50%; }\n  .grid .row .col-7 {\n    width: 58.33333%; }\n  .grid .row .col-8 {\n    width: 66.66667%; }\n  .grid .row .col-9 {\n    width: 75%; }\n  .grid .row .col-10 {\n    width: 83.33333%; }\n  .grid .row .col-11 {\n    width: 91.66667%; }\n  .grid .row .col-12 {\n    width: 100%; }\n  @media (max-width: 640px) {\n    .grid .row [class*='col-'] {\n      float: none;\n      width: 100%; } }\n\n* {\n  box-sizing: border-box;\n  font-family: 'Lato', sans-serif; }\n\n#logo {\n  background-image: url(https://static.pexels.com/photos/5836/yellow-metal-design-decoration.jpg);\n  background-size: cover;\n  height: 700px; }\n\n.menu {\n  height: 94px; }\n  .menu a {\n    text-decoration: none;\n    color: #999;\n    transition: all 0.2s;\n    -webkit-transition: all 0.2s;\n    -moz-transition: all 0.2s; }\n  .menu a:after {\n    content: \"\";\n    display: block;\n    padding: 10px 0 0 0;\n    border-top: 2px solid #999;\n    width: 0;\n    transition: all 0.2s;\n    -webkit-transition: all 0.2s;\n    -moz-transition: all 0.2s; }\n  .menu a:hover {\n    color: #000; }\n  .menu a:hover:after {\n    width: 100%;\n    border-top: 4px solid #FEE700; }\n  .menu p {\n    text-align: center;\n    padding-top: 8px;\n    font-weight: 800;\n    font-size: 26px; }\n\n#mainSection {\n  height: 800px;\n  display: flex;\n  align-items: center;\n  justify-content: space-around; }\n  #mainSection .boxRow {\n    display: flex;\n    margin-right: 15px; }\n  #mainSection .arrows {\n    width: 48px;\n    height: 48px;\n    border-color: white;\n    top: 50%; }\n  #mainSection .prev {\n    border-bottom: 6px solid;\n    border-left: 6px solid;\n    transform: rotate(45deg);\n    left: 10px; }\n  #mainSection .next {\n    border-bottom: 6px solid;\n    border-left: 6px solid;\n    transform: rotate(-135deg);\n    right: 10px; }\n\n#footer {\n  height: 100px;\n  background-color: #87919E;\n  margin-top: 1px; }\n  #footer p {\n    float: right;\n    color: white;\n    padding-top: 63px;\n    padding-right: 6px;\n    font-size: 14px;\n    font-style: italic; }\n\n.slider {\n  width: 400px;\n  height: 200px; }\n  .slider img {\n    border: 1px solid black;\n    width: 400px;\n    height: 200px; }\n\n#home {\n  height: 800px; }\n\n#aboutme {\n  height: 800px;\n  display: flex;\n  align-items: center;\n  justify-content: space-around; }\n  #aboutme img {\n    border: 1px solid gray; }\n\n.mailTooltip {\n  position: absolute;\n  margin-left: 295px;\n  margin-top: 40px;\n  border: 2px solid gray;\n  background-color: white;\n  font-size: 24px; }\n\n.loader {\n  animation: loader 5s linear infinite;\n  position: absolute;\n  top: calc(50% - 20px);\n  left: calc(50% - 20px); }\n\n@keyframes loader {\n  0% {\n    left: -100px; }\n  100% {\n    left: 110%; } }\n\n#box {\n  width: 50px;\n  height: 50px;\n  background: #fff;\n  animation: animate .5s linear infinite;\n  position: absolute;\n  top: 0;\n  left: 0;\n  border-radius: 3px; }\n\n@keyframes animate {\n  17% {\n    border-bottom-right-radius: 3px; }\n  25% {\n    transform: translateY(9px) rotate(22.5deg); }\n  50% {\n    transform: translateY(18px) scale(1, 0.9) rotate(45deg);\n    border-bottom-right-radius: 40px; }\n  75% {\n    transform: translateY(9px) rotate(67.5deg); }\n  100% {\n    transform: translateY(0) rotate(90deg); } }\n\n#shadow {\n  width: 50px;\n  height: 5px;\n  background: #000;\n  opacity: 0.1;\n  position: absolute;\n  top: 59px;\n  left: 0;\n  border-radius: 50%;\n  animation: shadow .5s linear infinite; }\n\n@keyframes shadow {\n  50% {\n    transform: scale(1.2, 1); } }\n", ""]);
 
 // exports
 
