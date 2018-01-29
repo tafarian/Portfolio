@@ -13720,7 +13720,11 @@ document.addEventListener('DOMContentLoaded', function () {
                         _react2.default.createElement(
                             'div',
                             { className: 'col-12', id: 'home' },
-                            _react2.default.createElement('img', { style: { width: "250px", height: "250px", margin: "0 auto", display: "block" }, src: './../images/undercon.png' })
+                            _react2.default.createElement(
+                                'p',
+                                null,
+                                'Witaj'
+                            )
                         )
                     )
                 );
@@ -13778,8 +13782,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         { className: 'row' },
                         _react2.default.createElement(
                             'div',
-                            { className: 'col-12', id: 'mainSection' },
-                            _react2.default.createElement('div', { className: 'arrows prev',
+                            { className: 'col-12', id: 'projects' },
+                            _react2.default.createElement('i', { className: 'fas fa-angle-double-left arrowPrev',
                                 onClick: this.handleClickPrev }),
                             _react2.default.createElement(
                                 'div',
@@ -13790,7 +13794,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                     _react2.default.createElement(
                                         'a',
                                         { href: 'https://tafarian.github.io/Sit-on-chair-project', target: '_blank' },
-                                        _react2.default.createElement('img', { src: './../images/sitonchair.png' })
+                                        'Sit on chair'
                                     )
                                 ) : null,
                                 this.state.slideCount === 2 ? _react2.default.createElement(
@@ -13799,7 +13803,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                     _react2.default.createElement(
                                         'a',
                                         { href: 'https://tafarian.github.io/Furry-game', target: '_blank' },
-                                        _react2.default.createElement('img', { src: './../images/furrygame.png' })
+                                        'Furry game'
                                     )
                                 ) : null,
                                 this.state.slideCount === 3 ? _react2.default.createElement(
@@ -13808,11 +13812,11 @@ document.addEventListener('DOMContentLoaded', function () {
                                     _react2.default.createElement(
                                         'a',
                                         { href: 'https://tafarian.github.io/Movie-finder-app/', target: '_blank' },
-                                        _react2.default.createElement('img', { src: './../images/mfa.png' })
+                                        'Movie finder'
                                     )
                                 ) : null
                             ),
-                            _react2.default.createElement('div', { className: 'arrows next',
+                            _react2.default.createElement('i', { className: 'fas fa-angle-double-right arrowNext',
                                 onClick: this.handleClickNext })
                         )
                     )
@@ -13827,14 +13831,40 @@ document.addEventListener('DOMContentLoaded', function () {
         _inherits(AboutMe, _React$Component5);
 
         function AboutMe() {
+            var _ref2;
+
+            var _temp2, _this5, _ret2;
+
             _classCallCheck(this, AboutMe);
 
-            return _possibleConstructorReturn(this, (AboutMe.__proto__ || Object.getPrototypeOf(AboutMe)).apply(this, arguments));
+            for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+                args[_key2] = arguments[_key2];
+            }
+
+            return _ret2 = (_temp2 = (_this5 = _possibleConstructorReturn(this, (_ref2 = AboutMe.__proto__ || Object.getPrototypeOf(AboutMe)).call.apply(_ref2, [this].concat(args))), _this5), _this5.state = {
+                source: null
+            }, _this5.handleClick = function (e) {
+                _this5.setState({
+                    source: e.target.src
+                });
+            }, _this5.handleDelete = function (e) {
+                _this5.setState({
+                    source: null
+                });
+            }, _temp2), _possibleConstructorReturn(_this5, _ret2);
         }
 
         _createClass(AboutMe, [{
             key: 'render',
             value: function render() {
+                var full = null;
+                if (this.state.source !== null) {
+                    full = _react2.default.createElement(
+                        'div',
+                        { className: 'fullScreen' },
+                        _react2.default.createElement('img', { onClick: this.handleDelete, src: this.state.source })
+                    );
+                }
                 return _react2.default.createElement(
                     'section',
                     { className: 'grid space' },
@@ -13844,11 +13874,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         _react2.default.createElement(
                             'div',
                             { className: 'col-12', id: 'aboutme' },
-                            _react2.default.createElement(
-                                'a',
-                                { href: 'http://imgie.pl/images/2018/01/25/HTMLHTMLJavascriptPHPSQLUNIXScripting4b148.png', target: '_blank' },
-                                _react2.default.createElement('img', { src: '/./../images/cv.png' })
-                            )
+                            _react2.default.createElement('img', { className: 'small', src: 'http://imgie.pl/images/2018/01/25/HTMLHTMLJavascriptPHPSQLUNIXScripting4b148.png', onClick: this.handleClick }),
+                            full
                         )
                     )
                 );
@@ -13862,19 +13889,19 @@ document.addEventListener('DOMContentLoaded', function () {
         _inherits(Contact, _React$Component6);
 
         function Contact() {
-            var _ref2;
+            var _ref3;
 
-            var _temp2, _this6, _ret2;
+            var _temp3, _this6, _ret3;
 
             _classCallCheck(this, Contact);
 
-            for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-                args[_key2] = arguments[_key2];
+            for (var _len3 = arguments.length, args = Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+                args[_key3] = arguments[_key3];
             }
 
-            return _ret2 = (_temp2 = (_this6 = _possibleConstructorReturn(this, (_ref2 = Contact.__proto__ || Object.getPrototypeOf(Contact)).call.apply(_ref2, [this].concat(args))), _this6), _this6.state = {
+            return _ret3 = (_temp3 = (_this6 = _possibleConstructorReturn(this, (_ref3 = Contact.__proto__ || Object.getPrototypeOf(Contact)).call.apply(_ref3, [this].concat(args))), _this6), _this6.state = {
                 hover: false
-            }, _temp2), _possibleConstructorReturn(_this6, _ret2);
+            }, _temp3), _possibleConstructorReturn(_this6, _ret3);
         }
 
         _createClass(Contact, [{
@@ -13994,19 +14021,19 @@ document.addEventListener('DOMContentLoaded', function () {
         _inherits(App, _React$Component9);
 
         function App() {
-            var _ref3;
+            var _ref4;
 
-            var _temp3, _this9, _ret3;
+            var _temp4, _this9, _ret4;
 
             _classCallCheck(this, App);
 
-            for (var _len3 = arguments.length, args = Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
-                args[_key3] = arguments[_key3];
+            for (var _len4 = arguments.length, args = Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
+                args[_key4] = arguments[_key4];
             }
 
-            return _ret3 = (_temp3 = (_this9 = _possibleConstructorReturn(this, (_ref3 = App.__proto__ || Object.getPrototypeOf(App)).call.apply(_ref3, [this].concat(args))), _this9), _this9.state = {
+            return _ret4 = (_temp4 = (_this9 = _possibleConstructorReturn(this, (_ref4 = App.__proto__ || Object.getPrototypeOf(App)).call.apply(_ref4, [this].concat(args))), _this9), _this9.state = {
                 loading: true
-            }, _temp3), _possibleConstructorReturn(_this9, _ret3);
+            }, _temp4), _possibleConstructorReturn(_this9, _ret4);
         }
 
         _createClass(App, [{
@@ -14018,7 +14045,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     return _this10.setState({
                         loading: false
                     });
-                }, 1000);
+                }, 2500);
             }
         }, {
             key: 'render',
@@ -14027,9 +14054,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (this.state.loading === true) {
                     return _react2.default.createElement(
                         'div',
-                        { className: 'loader' },
-                        _react2.default.createElement('div', { id: 'shadow' }),
-                        _react2.default.createElement('div', { id: 'box' })
+                        { id: 'preloader' },
+                        _react2.default.createElement('div', { id: 'loader' })
                     );
                 }
 
@@ -25129,7 +25155,7 @@ exports = module.exports = __webpack_require__(217)(false);
 
 
 // module
-exports.push([module.i, ".grid {\n  width: 100%;\n  max-width: 1200px;\n  margin: 0 auto; }\n  .grid .row:before, .grid .row:after {\n    content: \"\";\n    display: table;\n    clear: both; }\n  .grid .row [class*='col-'] {\n    float: left;\n    min-height: 1px; }\n  .grid .row .col-1 {\n    width: 8.33333%; }\n  .grid .row .col-2 {\n    width: 16.66667%; }\n  .grid .row .col-3 {\n    width: 25%; }\n  .grid .row .col-4 {\n    width: 33.33333%; }\n  .grid .row .col-5 {\n    width: 41.66667%; }\n  .grid .row .col-6 {\n    width: 50%; }\n  .grid .row .col-7 {\n    width: 58.33333%; }\n  .grid .row .col-8 {\n    width: 66.66667%; }\n  .grid .row .col-9 {\n    width: 75%; }\n  .grid .row .col-10 {\n    width: 83.33333%; }\n  .grid .row .col-11 {\n    width: 91.66667%; }\n  .grid .row .col-12 {\n    width: 100%; }\n  @media (max-width: 640px) {\n    .grid .row [class*='col-'] {\n      float: none;\n      width: 100%; } }\n\n* {\n  box-sizing: border-box;\n  font-family: 'Lato', sans-serif; }\n\n#logo {\n  background-image: url(https://static.pexels.com/photos/5836/yellow-metal-design-decoration.jpg);\n  background-size: cover;\n  height: 700px; }\n\n.menu {\n  height: 94px; }\n  .menu a {\n    text-decoration: none;\n    color: #999;\n    transition: all 0.2s;\n    -webkit-transition: all 0.2s;\n    -moz-transition: all 0.2s; }\n  .menu a:after {\n    content: \"\";\n    display: block;\n    padding: 10px 0 0 0;\n    border-top: 2px solid #999;\n    width: 0;\n    transition: all 0.2s;\n    -webkit-transition: all 0.2s;\n    -moz-transition: all 0.2s; }\n  .menu a:hover {\n    color: #000; }\n  .menu a:hover:after {\n    width: 100%;\n    border-top: 4px solid #FEE700; }\n  .menu p {\n    text-align: center;\n    padding-top: 8px;\n    font-weight: 800;\n    font-size: 26px; }\n\n#mainSection {\n  height: 800px;\n  display: flex;\n  align-items: center;\n  justify-content: space-around; }\n  #mainSection .boxRow {\n    display: flex;\n    margin-right: 15px; }\n  #mainSection .arrows {\n    width: 48px;\n    height: 48px;\n    border-color: white;\n    top: 50%; }\n  #mainSection .prev {\n    border-bottom: 6px solid;\n    border-left: 6px solid;\n    transform: rotate(45deg);\n    left: 10px; }\n  #mainSection .next {\n    border-bottom: 6px solid;\n    border-left: 6px solid;\n    transform: rotate(-135deg);\n    right: 10px; }\n\n#footer {\n  height: 100px;\n  background-color: #87919E;\n  margin-top: 1px; }\n  #footer p {\n    float: right;\n    color: white;\n    padding-top: 63px;\n    padding-right: 6px;\n    font-size: 14px;\n    font-style: italic; }\n\n.slider {\n  width: 400px;\n  height: 200px; }\n  .slider img {\n    border: 1px solid black;\n    width: 400px;\n    height: 200px; }\n\n#home {\n  height: 800px; }\n\n#aboutme {\n  height: 800px;\n  display: flex;\n  align-items: center;\n  justify-content: space-around; }\n  #aboutme img {\n    border: 1px solid gray; }\n\n.mailTooltip {\n  position: absolute;\n  margin-left: 295px;\n  margin-top: 40px;\n  border: 2px solid gray;\n  background-color: white;\n  font-size: 24px; }\n\n.loader {\n  animation: loader 5s linear infinite;\n  position: absolute;\n  top: calc(50% - 20px);\n  left: calc(50% - 20px); }\n\n@keyframes loader {\n  0% {\n    left: -100px; }\n  100% {\n    left: 110%; } }\n\n#box {\n  width: 50px;\n  height: 50px;\n  background: #fff;\n  animation: animate .5s linear infinite;\n  position: absolute;\n  top: 0;\n  left: 0;\n  border-radius: 3px; }\n\n@keyframes animate {\n  17% {\n    border-bottom-right-radius: 3px; }\n  25% {\n    transform: translateY(9px) rotate(22.5deg); }\n  50% {\n    transform: translateY(18px) scale(1, 0.9) rotate(45deg);\n    border-bottom-right-radius: 40px; }\n  75% {\n    transform: translateY(9px) rotate(67.5deg); }\n  100% {\n    transform: translateY(0) rotate(90deg); } }\n\n#shadow {\n  width: 50px;\n  height: 5px;\n  background: #000;\n  opacity: 0.1;\n  position: absolute;\n  top: 59px;\n  left: 0;\n  border-radius: 50%;\n  animation: shadow .5s linear infinite; }\n\n@keyframes shadow {\n  50% {\n    transform: scale(1.2, 1); } }\n", ""]);
+exports.push([module.i, ".grid {\n  width: 100%;\n  max-width: 1200px;\n  margin: 0 auto; }\n  .grid .row:before, .grid .row:after {\n    content: \"\";\n    display: table;\n    clear: both; }\n  .grid .row [class*='col-'] {\n    float: left;\n    min-height: 1px; }\n  .grid .row .col-1 {\n    width: 8.33333%; }\n  .grid .row .col-2 {\n    width: 16.66667%; }\n  .grid .row .col-3 {\n    width: 25%; }\n  .grid .row .col-4 {\n    width: 33.33333%; }\n  .grid .row .col-5 {\n    width: 41.66667%; }\n  .grid .row .col-6 {\n    width: 50%; }\n  .grid .row .col-7 {\n    width: 58.33333%; }\n  .grid .row .col-8 {\n    width: 66.66667%; }\n  .grid .row .col-9 {\n    width: 75%; }\n  .grid .row .col-10 {\n    width: 83.33333%; }\n  .grid .row .col-11 {\n    width: 91.66667%; }\n  .grid .row .col-12 {\n    width: 100%; }\n  @media (max-width: 640px) {\n    .grid .row [class*='col-'] {\n      float: none;\n      width: 100%; } }\n\n* {\n  box-sizing: border-box;\n  font-family: 'Lato', sans-serif; }\n\n#logo {\n  background-image: url(https://static.pexels.com/photos/5836/yellow-metal-design-decoration.jpg);\n  background-size: cover;\n  height: 700px; }\n\n.menu {\n  height: 94px; }\n  .menu a {\n    text-decoration: none;\n    color: #999;\n    transition: all 0.2s;\n    -webkit-transition: all 0.2s;\n    -moz-transition: all 0.2s; }\n  .menu a:after {\n    content: \"\";\n    display: block;\n    padding: 10px 0 0 0;\n    border-top: 2px solid #999;\n    width: 0;\n    transition: all 0.2s;\n    -webkit-transition: all 0.2s;\n    -moz-transition: all 0.2s; }\n  .menu a:hover {\n    color: #000; }\n  .menu a:hover:after {\n    width: 100%;\n    border-top: 4px solid #FEE700; }\n  .menu p {\n    text-align: center;\n    padding-top: 8px;\n    font-weight: 800;\n    font-size: 26px; }\n\n#mainSection {\n  height: 800px;\n  display: flex;\n  align-items: center;\n  justify-content: space-around; }\n  #mainSection .arrowPrev {\n    font-size: 30px; }\n  #mainSection .arrowNext {\n    font-size: 30px; }\n\n#projects {\n  height: 800px;\n  display: flex;\n  align-items: center;\n  justify-content: space-around; }\n  #projects .slider {\n    width: 400px;\n    height: 200px;\n    border: 1px solid black;\n    display: flex;\n    align-items: center;\n    justify-content: center; }\n    #projects .slider a {\n      text-decoration: none;\n      color: gray;\n      font-size: 40px; }\n    #projects .slider a:after {\n      content: \"\";\n      display: block;\n      padding: 10px 0 0 0;\n      border-top: 2px solid #999;\n      width: 0;\n      transition: all 0.2s;\n      -webkit-transition: all 0.2s;\n      -moz-transition: all 0.2s; }\n    #projects .slider a:hover {\n      color: #000; }\n    #projects .slider a:hover:after {\n      width: 100%;\n      border-top: 4px solid #FEE700; }\n\n#footer {\n  height: 100px;\n  background-color: #FEE700;\n  margin-top: 1px; }\n  #footer p {\n    float: right;\n    padding-top: 63px;\n    padding-right: 6px;\n    font-size: 14px;\n    font-style: italic; }\n\n#home {\n  display: flex;\n  align-items: center;\n  justify-content: space-around;\n  height: 800px; }\n\n#aboutme {\n  height: 800px;\n  display: flex;\n  align-items: center;\n  justify-content: space-around; }\n  #aboutme .small {\n    width: 300px;\n    height: 400px; }\n\n.fullScreen {\n  position: fixed;\n  width: 100%;\n  height: 100%;\n  left: 0;\n  top: 0;\n  z-index: 8; }\n  .fullScreen img {\n    display: block;\n    margin: 15px auto 5px;\n    height: 1003px;\n    width: 717px; }\n\n.mailTooltip {\n  position: absolute;\n  margin-left: 400px;\n  margin-top: 40px;\n  font-size: 24px; }\n\n#preloader {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%; }\n\n#loader {\n  display: block;\n  position: relative;\n  left: 50%;\n  top: 50%;\n  width: 150px;\n  height: 150px;\n  margin: -75px 0 0 -75px;\n  border-radius: 50%;\n  border: 3px solid transparent;\n  border-top-color: #dbb21f;\n  -webkit-animation: spin 2s linear infinite;\n  animation: spin 2s linear infinite; }\n\n#loader:before {\n  content: \"\";\n  position: absolute;\n  top: 5px;\n  left: 5px;\n  right: 5px;\n  bottom: 5px;\n  border-radius: 50%;\n  border: 3px solid transparent;\n  border-top-color: #d38e24;\n  -webkit-animation: spin 3s linear infinite;\n  animation: spin 3s linear infinite; }\n\n#loader:after {\n  content: \"\";\n  position: absolute;\n  top: 15px;\n  left: 15px;\n  right: 15px;\n  bottom: 15px;\n  border-radius: 50%;\n  border: 3px solid transparent;\n  border-top-color: #ff6730;\n  -webkit-animation: spin 1.5s linear infinite;\n  animation: spin 1.5s linear infinite; }\n\n@-webkit-keyframes spin {\n  0% {\n    -webkit-transform: rotate(0deg);\n    -ms-transform: rotate(0deg);\n    transform: rotate(0deg); }\n  100% {\n    -webkit-transform: rotate(360deg);\n    -ms-transform: rotate(360deg);\n    transform: rotate(360deg); } }\n\n@keyframes spin {\n  0% {\n    -webkit-transform: rotate(0deg);\n    -ms-transform: rotate(0deg);\n    transform: rotate(0deg); }\n  100% {\n    -webkit-transform: rotate(360deg);\n    -ms-transform: rotate(360deg);\n    transform: rotate(360deg); } }\n", ""]);
 
 // exports
 

@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 <section className="grid space">
                     <div className="row">
                         <div className="col-12" id="home">
-                            <img style={{width: "250px", height: "250px", margin: "0 auto", display: "block"}} src="./../images/undercon.png"></img>
+                            <p>Witaj</p>
                         </div>
                     </div>
                 </section>
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function(){
         handleClickPrev = () => {
             this.setState({
                 slideCount: this.state.slideCount - 1
-            })
+            });
             if (this.state.slideCount <= 1) {
                 this.setState({
                     slideCount: 3
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function(){
         handleClickNext = () => {
             this.setState({
                 slideCount: this.state.slideCount + 1
-            })
+            });
             if (this.state.slideCount > 2) {
                 this.setState({
                     slideCount: 1
@@ -84,31 +84,34 @@ document.addEventListener('DOMContentLoaded', function(){
             return (
                 <section className="grid space">
                     <div className="row">
-                        <div className="col-12" id="mainSection">
-                            <div className="arrows prev"
-                                 onClick={this.handleClickPrev}></div>
+                        <div className="col-12" id="projects">
+                            <i className="fas fa-angle-double-left arrowPrev"
+                               onClick={this.handleClickPrev}></i>
                             <div className="boxRow slider">
                                 { this.state.slideCount === 1 ?
                                     <div>
-                                        <a href="https://tafarian.github.io/Sit-on-chair-project" target="_blank"><img src="./../images/sitonchair.png"/>
+                                        <a href="https://tafarian.github.io/Sit-on-chair-project" target="_blank">
+                                            Sit on chair
                                         </a>
                                     </div> :
                                     null }
                                 { this.state.slideCount === 2 ?
                                     <div>
-                                        <a href="https://tafarian.github.io/Furry-game" target="_blank"><img src="./../images/furrygame.png"/>
+                                        <a href="https://tafarian.github.io/Furry-game" target="_blank">
+                                            Furry game
                                         </a>
                                     </div> :
                                     null }
                                 { this.state.slideCount === 3 ?
                                     <div>
-                                        <a href="https://tafarian.github.io/Movie-finder-app/" target="_blank"><img src="./../images/mfa.png"/>
+                                        <a href="https://tafarian.github.io/Movie-finder-app/" target="_blank">
+                                            Movie finder
                                         </a>
                                     </div> :
                                     null }
                             </div>
-                            <div className="arrows next"
-                                 onClick={this.handleClickNext}></div>
+                            <i className="fas fa-angle-double-right arrowNext"
+                               onClick={this.handleClickNext}></i>
                         </div>
                     </div>
                 </section>
@@ -117,14 +120,37 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
     class AboutMe extends React.Component {
+        state = {
+            source: null,
+        };
+
+        handleClick = (e) => {
+            this.setState ({
+                source: e.target.src,
+            });
+        };
+
+        handleDelete = (e) => {
+            this.setState ({
+                source: null,
+            });
+        };
+
         render() {
+            let full = null;
+            if (this.state.source !== null) {
+                full = (
+                    <div className="fullScreen" >
+                        <img onClick={this.handleDelete} src={this.state.source} />
+                    </div>
+                )
+            }
             return (
                 <section className="grid space">
                     <div className="row">
                         <div className="col-12" id="aboutme">
-                            <a href="http://imgie.pl/images/2018/01/25/HTMLHTMLJavascriptPHPSQLUNIXScripting4b148.png" target="_blank">
-                                <img src="/./../images/cv.png"></img>
-                            </a>
+                                <img className="small" src="http://imgie.pl/images/2018/01/25/HTMLHTMLJavascriptPHPSQLUNIXScripting4b148.png" onClick={ this.handleClick }></img>
+                            { full }
                         </div>
                     </div>
                 </section>
@@ -207,16 +233,15 @@ document.addEventListener('DOMContentLoaded', function(){
             setTimeout(() =>
                 this.setState({
                     loading: false
-                }), 1000);
+                }), 2500);
         }
 
         render() {
 
             if(this.state.loading === true) {
                 return (
-                    <div className="loader">
-                        <div id="shadow"></div>
-                        <div id="box"></div>
+                    <div id="preloader">
+                        <div id="loader"></div>
                     </div>
                 )
             }
