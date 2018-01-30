@@ -107,9 +107,9 @@
       padding: 10px 0 0 0;
       border-top: 2px solid #999;
       width: 0;
-      transition: all 0.2s;
-      -webkit-transition: all 0.2s;
-      -moz-transition: all 0.2s; }
+      transition: all 1s;
+      -webkit-transition: all 1s;
+      -moz-transition: all 1s; }
     #projects .slider a:hover {
       color: #000; }
     #projects .slider a:hover:after {
@@ -155,12 +155,24 @@
     height: 1003px;
     width: 717px; }
 
-.mailTooltip {
+.projectTooltip {
   position: absolute;
-  margin-left: 400px;
-  margin-top: 40px;
-  font-size: 24px; }
+  font-size: 24px;
+  margin-top: 50px;
+  animation-name: blur;
+  animation-duration: 1s; }
 
+@keyframes blur {
+  0% {
+    filter: blur(8px); }
+  25% {
+    filter: blur(6px); }
+  50% {
+    filter: blur(4px); }
+  75% {
+    filter: blur(2px); }
+  100% {
+    filter: blur(1px); } }
 #preloader {
   position: fixed;
   top: 0;

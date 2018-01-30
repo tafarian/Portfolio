@@ -54,7 +54,10 @@ document.addEventListener('DOMContentLoaded', function(){
 
     class Projects extends React.Component {
         state = {
-            slideCount: 1
+            slideCount: 1,
+            hoverSit: false,
+            hoverFurry: false,
+            hoverMovie: false,
         };
 
         handleClickPrev = () => {
@@ -79,36 +82,81 @@ document.addEventListener('DOMContentLoaded', function(){
             }
         };
 
+        handleMouseClickSit() {
+            if (this.state.hoverSit === false) {
+                this.setState({hoverSit: true})
+            } else {
+                this.setState({hoverSit: false})
+            }
+        }
+
+        handleMouseClickFurry() {
+            if (this.state.hoverFurry === false) {
+                this.setState({hoverFurry: true})
+            } else {
+                this.setState({hoverFurry: false})
+            }
+        }
+
+        handleMouseClickMovie() {
+            if (this.state.hoverMovie === false) {
+                this.setState({hoverMovie: true})
+            } else {
+                this.setState({hoverMovie: false})
+            }
+        }
 
         render() {
+
+            const sitOnTooltip = {
+                display: this.state.hoverSit ? 'block' : 'none'
+            };
+
+            const furryTooltip = {
+                display: this.state.hoverFurry ? 'block' : 'none'
+            };
+
+            const movieTooltip = {
+                display: this.state.hoverMovie ? 'block' : 'none'
+            };
+
             return (
                 <section className="grid space">
                     <div className="row">
                         <div className="col-12" id="projects">
                             <i className="fas fa-angle-double-left arrowPrev"
                                onClick={this.handleClickPrev}></i>
-                            <div className="boxRow slider">
+                            <div className="slider">
                                 { this.state.slideCount === 1 ?
-                                    <div>
-                                        <a href="https://tafarian.github.io/Sit-on-chair-project" target="_blank">
-                                            Sit on chair
+                                    <div onMouseEnter={this.handleMouseClickSit.bind(this)}
+                                         onMouseLeave={this.handleMouseClickSit.bind(this)}>
+                                        <a href="https://tafarian.github.io/Sit-on-chair-project"
+                                           target="_blank">
+                                            SIT ON CHAIR
                                         </a>
                                     </div> :
                                     null }
+                                <div className="projectTooltip" style={sitOnTooltip}>HTML / CSS</div>
                                 { this.state.slideCount === 2 ?
-                                    <div>
-                                        <a href="https://tafarian.github.io/Furry-game" target="_blank">
-                                            Furry game
+                                    <div onMouseEnter={this.handleMouseClickFurry.bind(this)}
+                                         onMouseLeave={this.handleMouseClickFurry.bind(this)}>
+                                        <a href="https://tafarian.github.io/Furry-game"
+                                           target="_blank">
+                                            FURRY GAME
                                         </a>
                                     </div> :
                                     null }
+                                <div className="projectTooltip" style={furryTooltip}>HTML / CSS / JAVASCRIPT</div>
                                 { this.state.slideCount === 3 ?
-                                    <div>
-                                        <a href="https://tafarian.github.io/Movie-finder-app/" target="_blank">
-                                            Movie finder
+                                    <div onMouseEnter={this.handleMouseClickMovie.bind(this)}
+                                         onMouseLeave={this.handleMouseClickMovie.bind(this)}>
+                                        <a href="https://tafarian.github.io/Movie-finder-app/"
+                                           target="_blank">
+                                            MOVIE FINDER
                                         </a>
                                     </div> :
                                     null }
+                                <div className="projectTooltip" style={movieTooltip}>HTML / SASS / JAVASCRIPT / REACT</div>
                             </div>
                             <i className="fas fa-angle-double-right arrowNext"
                                onClick={this.handleClickNext}></i>

@@ -13749,7 +13749,10 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             return _ret = (_temp = (_this4 = _possibleConstructorReturn(this, (_ref = Projects.__proto__ || Object.getPrototypeOf(Projects)).call.apply(_ref, [this].concat(args))), _this4), _this4.state = {
-                slideCount: 1
+                slideCount: 1,
+                hoverSit: false,
+                hoverFurry: false,
+                hoverMovie: false
             }, _this4.handleClickPrev = function () {
                 _this4.setState({
                     slideCount: _this4.state.slideCount - 1
@@ -13772,8 +13775,48 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         _createClass(Projects, [{
+            key: 'handleMouseClickSit',
+            value: function handleMouseClickSit() {
+                if (this.state.hoverSit === false) {
+                    this.setState({ hoverSit: true });
+                } else {
+                    this.setState({ hoverSit: false });
+                }
+            }
+        }, {
+            key: 'handleMouseClickFurry',
+            value: function handleMouseClickFurry() {
+                if (this.state.hoverFurry === false) {
+                    this.setState({ hoverFurry: true });
+                } else {
+                    this.setState({ hoverFurry: false });
+                }
+            }
+        }, {
+            key: 'handleMouseClickMovie',
+            value: function handleMouseClickMovie() {
+                if (this.state.hoverMovie === false) {
+                    this.setState({ hoverMovie: true });
+                } else {
+                    this.setState({ hoverMovie: false });
+                }
+            }
+        }, {
             key: 'render',
             value: function render() {
+
+                var sitOnTooltip = {
+                    display: this.state.hoverSit ? 'block' : 'none'
+                };
+
+                var furryTooltip = {
+                    display: this.state.hoverFurry ? 'block' : 'none'
+                };
+
+                var movieTooltip = {
+                    display: this.state.hoverMovie ? 'block' : 'none'
+                };
+
                 return _react2.default.createElement(
                     'section',
                     { className: 'grid space' },
@@ -13787,34 +13830,55 @@ document.addEventListener('DOMContentLoaded', function () {
                                 onClick: this.handleClickPrev }),
                             _react2.default.createElement(
                                 'div',
-                                { className: 'boxRow slider' },
+                                { className: 'slider' },
                                 this.state.slideCount === 1 ? _react2.default.createElement(
                                     'div',
-                                    null,
+                                    { onMouseEnter: this.handleMouseClickSit.bind(this),
+                                        onMouseLeave: this.handleMouseClickSit.bind(this) },
                                     _react2.default.createElement(
                                         'a',
-                                        { href: 'https://tafarian.github.io/Sit-on-chair-project', target: '_blank' },
-                                        'Sit on chair'
+                                        { href: 'https://tafarian.github.io/Sit-on-chair-project',
+                                            target: '_blank' },
+                                        'SIT ON CHAIR'
                                     )
                                 ) : null,
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'projectTooltip', style: sitOnTooltip },
+                                    'HTML / CSS'
+                                ),
                                 this.state.slideCount === 2 ? _react2.default.createElement(
                                     'div',
-                                    null,
+                                    { onMouseEnter: this.handleMouseClickFurry.bind(this),
+                                        onMouseLeave: this.handleMouseClickFurry.bind(this) },
                                     _react2.default.createElement(
                                         'a',
-                                        { href: 'https://tafarian.github.io/Furry-game', target: '_blank' },
-                                        'Furry game'
+                                        { href: 'https://tafarian.github.io/Furry-game',
+                                            target: '_blank' },
+                                        'FURRY GAME'
                                     )
                                 ) : null,
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'projectTooltip', style: furryTooltip },
+                                    'HTML / CSS / JAVASCRIPT'
+                                ),
                                 this.state.slideCount === 3 ? _react2.default.createElement(
                                     'div',
-                                    null,
+                                    { onMouseEnter: this.handleMouseClickMovie.bind(this),
+                                        onMouseLeave: this.handleMouseClickMovie.bind(this) },
                                     _react2.default.createElement(
                                         'a',
-                                        { href: 'https://tafarian.github.io/Movie-finder-app/', target: '_blank' },
-                                        'Movie finder'
+                                        { href: 'https://tafarian.github.io/Movie-finder-app/',
+                                            target: '_blank' },
+                                        'MOVIE FINDER'
                                     )
-                                ) : null
+                                ) : null,
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'projectTooltip', style: movieTooltip },
+                                    'HTML / SASS / JAVASCRIPT / REACT'
+                                )
                             ),
                             _react2.default.createElement('i', { className: 'fas fa-angle-double-right arrowNext',
                                 onClick: this.handleClickNext })
@@ -25155,7 +25219,7 @@ exports = module.exports = __webpack_require__(217)(false);
 
 
 // module
-exports.push([module.i, ".grid {\n  width: 100%;\n  max-width: 1200px;\n  margin: 0 auto; }\n  .grid .row:before, .grid .row:after {\n    content: \"\";\n    display: table;\n    clear: both; }\n  .grid .row [class*='col-'] {\n    float: left;\n    min-height: 1px; }\n  .grid .row .col-1 {\n    width: 8.33333%; }\n  .grid .row .col-2 {\n    width: 16.66667%; }\n  .grid .row .col-3 {\n    width: 25%; }\n  .grid .row .col-4 {\n    width: 33.33333%; }\n  .grid .row .col-5 {\n    width: 41.66667%; }\n  .grid .row .col-6 {\n    width: 50%; }\n  .grid .row .col-7 {\n    width: 58.33333%; }\n  .grid .row .col-8 {\n    width: 66.66667%; }\n  .grid .row .col-9 {\n    width: 75%; }\n  .grid .row .col-10 {\n    width: 83.33333%; }\n  .grid .row .col-11 {\n    width: 91.66667%; }\n  .grid .row .col-12 {\n    width: 100%; }\n  @media (max-width: 640px) {\n    .grid .row [class*='col-'] {\n      float: none;\n      width: 100%; } }\n\n* {\n  box-sizing: border-box;\n  font-family: 'Lato', sans-serif; }\n\n#logo {\n  background-image: url(https://static.pexels.com/photos/5836/yellow-metal-design-decoration.jpg);\n  background-size: cover;\n  height: 700px; }\n\n.menu {\n  height: 94px; }\n  .menu a {\n    text-decoration: none;\n    color: #999;\n    transition: all 0.2s;\n    -webkit-transition: all 0.2s;\n    -moz-transition: all 0.2s; }\n  .menu a:after {\n    content: \"\";\n    display: block;\n    padding: 10px 0 0 0;\n    border-top: 2px solid #999;\n    width: 0;\n    transition: all 0.2s;\n    -webkit-transition: all 0.2s;\n    -moz-transition: all 0.2s; }\n  .menu a:hover {\n    color: #000; }\n  .menu a:hover:after {\n    width: 100%;\n    border-top: 4px solid #FEE700; }\n  .menu p {\n    text-align: center;\n    padding-top: 8px;\n    font-weight: 800;\n    font-size: 26px; }\n\n#mainSection {\n  height: 800px;\n  display: flex;\n  align-items: center;\n  justify-content: space-around; }\n  #mainSection .arrowPrev {\n    font-size: 30px; }\n  #mainSection .arrowNext {\n    font-size: 30px; }\n\n#projects {\n  height: 800px;\n  display: flex;\n  align-items: center;\n  justify-content: space-around; }\n  #projects .slider {\n    width: 400px;\n    height: 200px;\n    border: 1px solid black;\n    display: flex;\n    align-items: center;\n    justify-content: center; }\n    #projects .slider a {\n      text-decoration: none;\n      color: gray;\n      font-size: 40px; }\n    #projects .slider a:after {\n      content: \"\";\n      display: block;\n      padding: 10px 0 0 0;\n      border-top: 2px solid #999;\n      width: 0;\n      transition: all 0.2s;\n      -webkit-transition: all 0.2s;\n      -moz-transition: all 0.2s; }\n    #projects .slider a:hover {\n      color: #000; }\n    #projects .slider a:hover:after {\n      width: 100%;\n      border-top: 4px solid #FEE700; }\n\n#footer {\n  height: 100px;\n  background-color: #FEE700;\n  margin-top: 1px; }\n  #footer p {\n    float: right;\n    padding-top: 63px;\n    padding-right: 6px;\n    font-size: 14px;\n    font-style: italic; }\n\n#home {\n  display: flex;\n  align-items: center;\n  justify-content: space-around;\n  height: 800px; }\n\n#aboutme {\n  height: 800px;\n  display: flex;\n  align-items: center;\n  justify-content: space-around; }\n  #aboutme .small {\n    width: 300px;\n    height: 400px; }\n\n.fullScreen {\n  position: fixed;\n  width: 100%;\n  height: 100%;\n  left: 0;\n  top: 0;\n  z-index: 8; }\n  .fullScreen img {\n    display: block;\n    margin: 15px auto 5px;\n    height: 1003px;\n    width: 717px; }\n\n.mailTooltip {\n  position: absolute;\n  margin-left: 400px;\n  margin-top: 40px;\n  font-size: 24px; }\n\n#preloader {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%; }\n\n#loader {\n  display: block;\n  position: relative;\n  left: 50%;\n  top: 50%;\n  width: 150px;\n  height: 150px;\n  margin: -75px 0 0 -75px;\n  border-radius: 50%;\n  border: 3px solid transparent;\n  border-top-color: #dbb21f;\n  -webkit-animation: spin 2s linear infinite;\n  animation: spin 2s linear infinite; }\n\n#loader:before {\n  content: \"\";\n  position: absolute;\n  top: 5px;\n  left: 5px;\n  right: 5px;\n  bottom: 5px;\n  border-radius: 50%;\n  border: 3px solid transparent;\n  border-top-color: #d38e24;\n  -webkit-animation: spin 3s linear infinite;\n  animation: spin 3s linear infinite; }\n\n#loader:after {\n  content: \"\";\n  position: absolute;\n  top: 15px;\n  left: 15px;\n  right: 15px;\n  bottom: 15px;\n  border-radius: 50%;\n  border: 3px solid transparent;\n  border-top-color: #ff6730;\n  -webkit-animation: spin 1.5s linear infinite;\n  animation: spin 1.5s linear infinite; }\n\n@-webkit-keyframes spin {\n  0% {\n    -webkit-transform: rotate(0deg);\n    -ms-transform: rotate(0deg);\n    transform: rotate(0deg); }\n  100% {\n    -webkit-transform: rotate(360deg);\n    -ms-transform: rotate(360deg);\n    transform: rotate(360deg); } }\n\n@keyframes spin {\n  0% {\n    -webkit-transform: rotate(0deg);\n    -ms-transform: rotate(0deg);\n    transform: rotate(0deg); }\n  100% {\n    -webkit-transform: rotate(360deg);\n    -ms-transform: rotate(360deg);\n    transform: rotate(360deg); } }\n", ""]);
+exports.push([module.i, ".grid {\n  width: 100%;\n  max-width: 1200px;\n  margin: 0 auto; }\n  .grid .row:before, .grid .row:after {\n    content: \"\";\n    display: table;\n    clear: both; }\n  .grid .row [class*='col-'] {\n    float: left;\n    min-height: 1px; }\n  .grid .row .col-1 {\n    width: 8.33333%; }\n  .grid .row .col-2 {\n    width: 16.66667%; }\n  .grid .row .col-3 {\n    width: 25%; }\n  .grid .row .col-4 {\n    width: 33.33333%; }\n  .grid .row .col-5 {\n    width: 41.66667%; }\n  .grid .row .col-6 {\n    width: 50%; }\n  .grid .row .col-7 {\n    width: 58.33333%; }\n  .grid .row .col-8 {\n    width: 66.66667%; }\n  .grid .row .col-9 {\n    width: 75%; }\n  .grid .row .col-10 {\n    width: 83.33333%; }\n  .grid .row .col-11 {\n    width: 91.66667%; }\n  .grid .row .col-12 {\n    width: 100%; }\n  @media (max-width: 640px) {\n    .grid .row [class*='col-'] {\n      float: none;\n      width: 100%; } }\n\n* {\n  box-sizing: border-box;\n  font-family: 'Lato', sans-serif; }\n\n#logo {\n  background-image: url(https://static.pexels.com/photos/5836/yellow-metal-design-decoration.jpg);\n  background-size: cover;\n  height: 700px; }\n\n.menu {\n  height: 94px; }\n  .menu a {\n    text-decoration: none;\n    color: #999;\n    transition: all 0.2s;\n    -webkit-transition: all 0.2s;\n    -moz-transition: all 0.2s; }\n  .menu a:after {\n    content: \"\";\n    display: block;\n    padding: 10px 0 0 0;\n    border-top: 2px solid #999;\n    width: 0;\n    transition: all 0.2s;\n    -webkit-transition: all 0.2s;\n    -moz-transition: all 0.2s; }\n  .menu a:hover {\n    color: #000; }\n  .menu a:hover:after {\n    width: 100%;\n    border-top: 4px solid #FEE700; }\n  .menu p {\n    text-align: center;\n    padding-top: 8px;\n    font-weight: 800;\n    font-size: 26px; }\n\n#mainSection {\n  height: 800px;\n  display: flex;\n  align-items: center;\n  justify-content: space-around; }\n  #mainSection .arrowPrev {\n    font-size: 30px; }\n  #mainSection .arrowNext {\n    font-size: 30px; }\n\n#projects {\n  height: 800px;\n  display: flex;\n  align-items: center;\n  justify-content: space-around; }\n  #projects .slider {\n    width: 400px;\n    height: 200px;\n    border: 1px solid black;\n    display: flex;\n    align-items: center;\n    justify-content: center; }\n    #projects .slider a {\n      text-decoration: none;\n      color: gray;\n      font-size: 40px; }\n    #projects .slider a:after {\n      content: \"\";\n      display: block;\n      padding: 10px 0 0 0;\n      border-top: 2px solid #999;\n      width: 0;\n      transition: all 1s;\n      -webkit-transition: all 1s;\n      -moz-transition: all 1s; }\n    #projects .slider a:hover {\n      color: #000; }\n    #projects .slider a:hover:after {\n      width: 100%;\n      border-top: 4px solid #FEE700; }\n\n#footer {\n  height: 100px;\n  background-color: #FEE700;\n  margin-top: 1px; }\n  #footer p {\n    float: right;\n    padding-top: 63px;\n    padding-right: 6px;\n    font-size: 14px;\n    font-style: italic; }\n\n#home {\n  display: flex;\n  align-items: center;\n  justify-content: space-around;\n  height: 800px; }\n\n#aboutme {\n  height: 800px;\n  display: flex;\n  align-items: center;\n  justify-content: space-around; }\n  #aboutme .small {\n    width: 300px;\n    height: 400px; }\n\n.fullScreen {\n  position: fixed;\n  width: 100%;\n  height: 100%;\n  left: 0;\n  top: 0;\n  z-index: 8; }\n  .fullScreen img {\n    display: block;\n    margin: 15px auto 5px;\n    height: 1003px;\n    width: 717px; }\n\n.projectTooltip {\n  position: absolute;\n  font-size: 24px;\n  margin-top: 50px;\n  animation-name: blur;\n  animation-duration: 1s; }\n\n@keyframes blur {\n  0% {\n    filter: blur(8px); }\n  25% {\n    filter: blur(6px); }\n  50% {\n    filter: blur(4px); }\n  75% {\n    filter: blur(2px); }\n  100% {\n    filter: blur(1px); } }\n\n#preloader {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%; }\n\n#loader {\n  display: block;\n  position: relative;\n  left: 50%;\n  top: 50%;\n  width: 150px;\n  height: 150px;\n  margin: -75px 0 0 -75px;\n  border-radius: 50%;\n  border: 3px solid transparent;\n  border-top-color: #dbb21f;\n  -webkit-animation: spin 2s linear infinite;\n  animation: spin 2s linear infinite; }\n\n#loader:before {\n  content: \"\";\n  position: absolute;\n  top: 5px;\n  left: 5px;\n  right: 5px;\n  bottom: 5px;\n  border-radius: 50%;\n  border: 3px solid transparent;\n  border-top-color: #d38e24;\n  -webkit-animation: spin 3s linear infinite;\n  animation: spin 3s linear infinite; }\n\n#loader:after {\n  content: \"\";\n  position: absolute;\n  top: 15px;\n  left: 15px;\n  right: 15px;\n  bottom: 15px;\n  border-radius: 50%;\n  border: 3px solid transparent;\n  border-top-color: #ff6730;\n  -webkit-animation: spin 1.5s linear infinite;\n  animation: spin 1.5s linear infinite; }\n\n@-webkit-keyframes spin {\n  0% {\n    -webkit-transform: rotate(0deg);\n    -ms-transform: rotate(0deg);\n    transform: rotate(0deg); }\n  100% {\n    -webkit-transform: rotate(360deg);\n    -ms-transform: rotate(360deg);\n    transform: rotate(360deg); } }\n\n@keyframes spin {\n  0% {\n    -webkit-transform: rotate(0deg);\n    -ms-transform: rotate(0deg);\n    transform: rotate(0deg); }\n  100% {\n    -webkit-transform: rotate(360deg);\n    -ms-transform: rotate(360deg);\n    transform: rotate(360deg); } }\n", ""]);
 
 // exports
 
