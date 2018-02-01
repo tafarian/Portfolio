@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function(){
             hoverSit: false,
             hoverFurry: false,
             hoverMovie: false,
+            hoverToDo: false,
         };
 
         handleClickPrev = () => {
@@ -66,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function(){
             });
             if (this.state.slideCount <= 1) {
                 this.setState({
-                    slideCount: 3
+                    slideCount: 4
                 })
             }
         };
@@ -75,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function(){
             this.setState({
                 slideCount: this.state.slideCount + 1
             });
-            if (this.state.slideCount > 2) {
+            if (this.state.slideCount > 3) {
                 this.setState({
                     slideCount: 1
                 })
@@ -106,6 +107,14 @@ document.addEventListener('DOMContentLoaded', function(){
             }
         }
 
+        handleMouseClickToDo() {
+            if (this.state.hoverToDo === false) {
+                this.setState({hoverToDo: true})
+            } else {
+                this.setState({hoverToDo: false})
+            }
+        }
+
         render() {
 
             const sitOnTooltip = {
@@ -118,6 +127,10 @@ document.addEventListener('DOMContentLoaded', function(){
 
             const movieTooltip = {
                 display: this.state.hoverMovie ? 'block' : 'none'
+            };
+
+            const toDoTooltip = {
+                display: this.state.hoverToDo ? 'block' : 'none'
             };
 
             return (
@@ -136,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function(){
                                         </a>
                                     </div> :
                                     null }
-                                <div className="projectTooltip" style={sitOnTooltip}>HTML / CSS</div>
+                                <div className="projectTooltip" style={sitOnTooltip}>HTML / CSS / JAVASCRIPT</div>
                                 { this.state.slideCount === 2 ?
                                     <div onMouseEnter={this.handleMouseClickFurry.bind(this)}
                                          onMouseLeave={this.handleMouseClickFurry.bind(this)}>
@@ -157,7 +170,18 @@ document.addEventListener('DOMContentLoaded', function(){
                                     </div> :
                                     null }
                                 <div className="projectTooltip" style={movieTooltip}>HTML / SASS / JAVASCRIPT / REACT</div>
+                                { this.state.slideCount === 4 ?
+                                    <div onMouseEnter={this.handleMouseClickToDo.bind(this)}
+                                         onMouseLeave={this.handleMouseClickToDo.bind(this)}>
+                                        <a href="https://tafarian.github.io/ToDo-React/"
+                                           target="_blank">
+                                            Simple To Do List
+                                        </a>
+                                    </div> :
+                                    null }
+                                <div className="projectTooltip" style={toDoTooltip}>HTML / SASS / REACT</div>
                             </div>
+
                             <i className="fas fa-angle-double-right arrowNext"
                                onClick={this.handleClickNext}></i>
                         </div>

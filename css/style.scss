@@ -182,6 +182,12 @@
     animation-duration: 1s;
 }
 
+.mailTooltip {
+    position: absolute;
+    margin-left: 404px;
+    margin-top: 35px;
+}
+
 @keyframes blur {
     0% {
         filter: blur(8px);
