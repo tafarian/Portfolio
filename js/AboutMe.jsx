@@ -30,7 +30,7 @@ class AboutMe extends React.Component {
             <section className="grid space">
                 <div className="row">
                     <div className="col-12" id="aboutme">
-                        <img className="small" src="http://imgie.pl/images/2018/01/25/HTMLHTMLJavascriptPHPSQLUNIXScripting4b148.png" onClick={ this.handleClick }></img>
+                        <img className="small" src="./../images/CV-Jakub-Wyczesany.png" onClick={ this.handleClick }></img>
                         { full }
                     </div>
                 </div>

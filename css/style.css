@@ -152,8 +152,8 @@
   .fullScreen img {
     display: block;
     margin: 15px auto 5px;
-    height: 1003px;
-    width: 717px; }
+    height: 800px;
+    width: 550px; }
 
 .projectTooltip {
   position: absolute;
