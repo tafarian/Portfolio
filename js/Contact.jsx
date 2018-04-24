@@ -32,7 +32,7 @@ class Contact extends React.Component {
                         <i onClick={this.handleMouseClick.bind(this)}
                            className="fas fa-at"
                            style={{fontSize: "45px", color: "black"}}></i>
-                        <div className="mailTooltip" style={tooltipStyle}>ghaelios@gmail.com</div>
+                        <div className="mailTooltip" style={tooltipStyle}>jakub.wyczesany@gmail.com</div>
                     </div>
                 </div>
             </section>
