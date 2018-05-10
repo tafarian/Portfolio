@@ -28121,7 +28121,7 @@ var AboutMe = function (_React$Component) {
                     _react2.default.createElement(
                         "div",
                         { className: "col-12", id: "aboutme" },
-                        _react2.default.createElement("img", { className: "small", src: "./../images/CV.png", onClick: this.handleClick }),
+                        _react2.default.createElement("img", { className: "small", src: "https://image.ibb.co/cEo58y/cv.png", onClick: this.handleClick }),
                         full
                     )
                 )
